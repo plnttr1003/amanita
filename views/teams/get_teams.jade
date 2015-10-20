@@ -1,0 +1,7 @@
+include ../vars.jade
+
+each team in teams
+	a.content_item.collect(href='/souvenirs/' + team._id)
+		img.item_image(src=team.path.thumb)
+		.item_description
+			.item_title= team.i18n.title.get(locale)

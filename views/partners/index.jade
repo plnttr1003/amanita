@@ -1,0 +1,49 @@
+extends ../layout
+
+block title
+	title= __('ПАРТНЕРСТВО')
+
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/build/css/blocks_grid.css' + version)
+	link(rel='stylesheet', type='text/css', href='/build/css/partners.css' + version)
+
+block content_scripts
+	script(type='text/javascript', src='/build/libs/js/imagesloaded.pkgd.min.js' + version)
+	script(type='text/javascript', src='/build/libs/js/masonry.pkgd.min.js' + version)
+	script(type='text/javascript', src='/build/js/scroll.js' + version)
+	//-script(type='text/javascript', src='/build/js/partner.js' + version)
+
+
+
+
+
+block content
+	.content_title= __('Партнерство')
+	.content_partners_description
+		if (locale == 'ru')
+			include ../static/content/partnership/ru.html
+		else
+			include ../static/content/partnership/en.html
+	.content_outer_block
+
+		each partner in partners
+			.content_item
+				if (partner.path.thumb && partner.url)
+					a.item_image(style='background-image: url('+partner.path.thumb +')', href=partner.url, target='_blank')
+				else if (partner.path.thumb)
+					.item_image(style='background-image: url('+partner.path.thumb +')')
+				.item_description
+					if (partner.title)
+						.item_title= partner.i18n.title.get(locale)
+					if (partner.position)
+						.item_type: != partner.i18n.position.get(locale)
+					if (partner.url)
+						a.item_url(href=partner.url, target='_blank')= partner.url
+
+block scroll
+	.content_title
+	.content_scroll_items
+		each image in images
+			.content_scroll_item
+				img(src=image.path.thumb)
