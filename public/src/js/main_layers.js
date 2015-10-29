@@ -3,13 +3,16 @@ function intro_runction() {
 	var scr = $('body').height();
 	$('.intro_block').animate({
 			opacity: 0,
-	}, 500)
+	}, 500, function() {
+		$('.content_column.main .column_main_inner').css({'overflow-y':'scroll'});
+		$('.content_column main').css({'padding-bottom':'65px'});
+		$('.header_block, .footer_block').show();
+		$('.content_outer_block').css({'visibility':'visible'});
+	}
+
+	)
 	setTimeout(function() { $('.intro_block').remove()}, 600)
 }
-
-	$('.screen_block.intro_block').on('scroll', function(event) {
-		intro_runction()
-	});
 
 	$('.screen_block.intro_block').click(function () {
 		intro_runction()
