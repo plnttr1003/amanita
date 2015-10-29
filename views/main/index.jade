@@ -7,6 +7,7 @@ block title
 block content_style
 	link(rel='stylesheet', type='text/css', href='/build/css/blocks_grid.css' + version)
 	link(rel='stylesheet', type='text/css', href='/build/css/main.css' + version)
+	link(rel='stylesheet', type='text/css', href='/build/css/main_amanita.css' + version)
 	link(rel='stylesheet', type='text/css', href='/build/css/events_subsidiary_after.css' + version)
 	link(rel='stylesheet', type='text/css', href='/build/libs/css/jquery.fancybox.css' + version)
 
@@ -19,11 +20,40 @@ block content_scripts
 block content
 	- ev_lnght = Math.floor(Math.random() * ((events.length - 1) - 0 + 1)) + 0
 
-	.screen_block.intro_block
-		.intro_block_background(style='background-image:url(' + events[ev_lnght].images[0].original + ')')
-		.intro_block_inner
-			.intro_block_image
-				img(src='/images/design/logo_big.png')
+	.screen_block.intro_block.container
+		.intro_block_inner.inner AMANITA
+			.pers.pers1
+			.pers.pers2
+			.pers.pers3
+			.pers.pers4
+			.pers.pers5
+			.pers.pers6
+			.pers.pers7
+			.pers.pers8
+			.pers.pers9
+			.pers.pers10
+			.pers.pers11
+			.pers.pers12
+			.pers.pers13
+			.pers.pers14
+			.pers.pers15
+			.pers.pers16
+			.pers.pers17
+			.pers.pers18
+			.pers.pers19
+			.pers.pers20
+			.pers.pers21
+			.pers.pers22
+			.pers.pers23
+			.pers.pers24
+			.pers.pers25
+			.pers.pers26
+			.pers.pers27
+			.pers.pers28
+			.pers.pers29
+			.pers.pers30
+			.pers.pers31
+			.pers.pers32
 
 	.screen_block.info_block
 		.info_block_inner
@@ -42,11 +72,11 @@ block content
 	.screen_block.about_block
 		.about_block_inner
 			.about_block_image
-				img(src='/images/design/photo.jpg')
+				//-img(src='/images/design/photo.jpg')
 			.about_text_inner
-				if (locale == 'ru')
+				//--if (locale == 'ru')
 					include ../static/content/contacts/ru.html
-				else
+				//-else
 					include ../static/content/contacts/en.html
 		.goto_down
 			a.goto_down_inner.about
