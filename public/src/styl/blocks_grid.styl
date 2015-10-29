@@ -6,19 +6,19 @@
 			display block
 
 .content_item
-	width 240px
+	width 30vmin
 	float left
-	height 175px
+	height 20vmin
 	overflow hidden
 	text-decoration none
 	color black
 	display block
 	background-size cover
 	background-position center
-	margin-bottom 10px
+	margin-bottom 2vmin
 	cursor pointer
 	.item_image
-		width 240px
+		width 30vmin
 		display block
 	.item_description
 		padding-top 10px
@@ -38,8 +38,8 @@
 	&.important
 		background-size cover
 		background-position center
-		width 490px
-		height 355px
+		width 100vmin
+		height 70vmin
 		&:hover
 			background #f00!important
 			color #000
@@ -55,21 +55,16 @@
 				font 36pt/38pt 'code_pro_lightregular'
 				font-weight 200
 	&.special_important
-		@media screen and (max-width: 740px)
-			width 490px
-		width 740px
-		height 540px
+		width 100vmin
+		height 70vmin
 		&:hover
 			background #fff!important
 			color #f00
 			//outline 1px solid #f00
 		.item_description
-			width 740px
-			@media screen and (max-width: 740px)
-				width 490px
 			background transparent
 			box-sizing border-box
-			width 740px
+			width 100vmin
 			position absolute
 			bottom 0
 			.item_date
