@@ -10,12 +10,6 @@ $(document).ready(function() {
 	var news_stamp = document.getElementsByClassName('content_news_block')[0];
 
 	$container.imagesLoaded(function() {
-		$container.masonry({
-			columnWidth: 240,
-			gutter: 10,
-			itemSelector: '.event',
-			isInitLayout: false
-		}).masonry('stamp', news_stamp).masonry('layout').css('opacity', 1);
 
 		if (!window.history.state || (window.history.state.types.length == 0 && window.history.state.categorys.length == 0)) {
 			window.history.pushState(context, 'context');

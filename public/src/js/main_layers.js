@@ -7,7 +7,7 @@ function intro_runction() {
 		$('.content_column.main .column_main_inner').css({'overflow-y':'scroll'});
 		$('.content_column main').css({'padding-bottom':'65px'});
 		$('.header_block, .footer_block').show();
-		$('.content_outer_block').css({'visibility':'visible'});
+		$('.content_outer_block').css({'visibility':'visible','opacity':'1'});
 	}
 
 	)
