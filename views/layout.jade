@@ -1,0 +1,33 @@
+doctype html
+html
+	head
+		include vars
+		include header
+	body
+		include counters
+		.main_block
+			.header_block
+				.header_inner
+					a.header_logo(href='/')
+					.menu_block.right
+						.options_block
+							.option.menu_item.about= __('Обо мне')
+							.option.menu_item.contacts= __('Контакты')
+							.option.menu_option 
+							if (locale == 'ru')
+								a.option.lang(href='/lang/en') EN
+							else
+								a.option.lang(href='/lang/ru') RU
+			.content_block
+				.content_up_block
+					block content_up
+				.content_columns_block
+					.content_column.main
+						.column_main_inner
+							block content
+							.footer_block
+								.footer_block_inner= __('Все тексты и изображения ©Арсений Россихин')
+									br
+									span= __('2015 Все права защищены')
+					.content_column.scroll
+						block scroll

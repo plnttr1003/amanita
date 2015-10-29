@@ -1,0 +1,96 @@
+.content_column
+	&.scroll
+		.content_scroll_item
+			width 320px
+			min-height 100px
+			display block
+
+.content_item
+	width 240px
+	float left
+	height 175px
+	overflow hidden
+	text-decoration none
+	color black
+	display block
+	background-size cover
+	background-position center
+	margin-bottom 10px
+	cursor pointer
+	.item_image
+		width 240px
+		display block
+	.item_description
+		padding-top 10px
+		display none
+		display table
+		height 100%
+		width 100%
+		.item_date
+			font 10pt/12pt 'code_pro_lightregular'
+			display none
+		.item_title
+			font 24pt/26pt 'code_pro_lightregular'
+			font-weight 200
+			display none
+			vertical-align middle
+			text-align center
+	&.important
+		background-size cover
+		background-position center
+		width 490px
+		height 355px
+		&:hover
+			background #f00!important
+			color #000
+		.item_description
+			background transparent
+			box-sizing border-box
+			width 480px
+			position absolute
+			bottom 0
+			.item_date
+				font 10pt/12pt 'code_pro_lightregular'
+			.item_title
+				font 36pt/38pt 'code_pro_lightregular'
+				font-weight 200
+	&.special_important
+		@media screen and (max-width: 740px)
+			width 490px
+		width 740px
+		height 540px
+		&:hover
+			background #fff!important
+			color #f00
+			//outline 1px solid #f00
+		.item_description
+			width 740px
+			@media screen and (max-width: 740px)
+				width 490px
+			background transparent
+			box-sizing border-box
+			width 740px
+			position absolute
+			bottom 0
+			.item_date
+				font 10pt/12pt 'code_pro_lightregular'
+			.item_title
+				font 36pt/38pt 'code_pro_lightregular'
+				font-weight 200
+	&:hover
+		background #000!important
+		color #fff
+		.item_description
+			.item_title
+				display table-cell
+
+
+
+// Test
+
+
+.content_item.h1
+	height 280px
+
+.content_item.h2
+	height 520px

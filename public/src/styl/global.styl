@@ -1,0 +1,304 @@
+h1, h2, h3, h4, h5
+	font-weight normal
+	line-height 1em
+	margin 0
+
+h1
+	padding 35px 0 10px
+
+h2
+	padding 30px 0 8px
+
+h3
+	padding 20px 0 5px
+
+body
+	margin 0
+	padding 0
+	font 12pt/14pt 'code_pro_lightregular'
+	font-weight 400
+	overflow hidden
+
+html, body, .main_block, .content_block, .content_columns_block, .content_column, .column_inner_block
+	height 100%
+
+.header_block
+	position absolute
+	width 100%
+	background #fff
+	color #000
+	z-index 10
+	&.black_header
+		background transparent
+		color #fff
+
+.header_logo
+	&:hover
+		opacity 0.6
+
+.search_block
+	width 100%
+	display none
+	padding-bottom 5px
+
+.search_input
+	display block
+	width 100%
+	font-size 20pt
+	color white
+	background-color rgba(0, 0, 0, 0)
+	border 0
+	margin 0
+	padding 0
+	outline none
+	padding-bottom 5px
+	border-bottom 1px solid white
+	font-family 'code_pro_lightregular'
+
+.search_result
+	width 100%
+	margin-top 10px
+	display none
+	color white
+	a
+		color white
+
+.search_context
+	display none
+	margin-bottom 20px
+
+.context_title
+	border 1px solid white
+	display inline-block
+	padding-left 5px
+	padding-right 5px
+
+.context_result
+	display block
+	text-decoration none
+	margin-top 10px
+	font 14pt/16pt 'Roboto'
+	&:hover
+		color rgb(196, 20, 59)
+
+.header_inner
+.search_inner
+	width 100%
+	padding-top 30px
+	padding 10px
+	margin 0 auto
+	overflow hidden
+	max-width 1490px
+
+.menu_block
+	overflow hidden
+	&.left
+		float left
+		.menu_item_block
+			margin-left 15px
+			float left
+			.menu_item
+				display block
+				margin-top 4px
+				font 12pt/14pt 'code_pro_lightregular'
+				text-decoration none
+				padding-bottom 3px
+				&:hover
+					color rgb(196, 20, 59)
+			.menu_drop
+				width 115px
+				margin-left -10px
+				padding-top 7px
+				position absolute
+				display none
+				.drop_inner
+					width 115px
+					padding 0 10px 10px 10px
+					background-color rgba(0, 0, 0, 0.7)
+			&:hover .menu_drop
+				display block
+	&.right
+		float right
+
+.social_block
+	margin 0 auto 100px
+	text-align center
+	width 197px
+	a
+		color white
+		font 25px/25px 'Icons'
+		margin-right 5px
+		width 25px
+		text-decoration none
+		&:hover
+			color #f00
+		&.shutterstock
+			width 100px
+			background url('/images/design/shuttr.png') 0 -2px no-repeat
+			height 15px
+			display inline-block
+			background-size 100%
+			margin-right 0
+			margin-left 4px
+			&:hover
+				background-position 0 -18px
+		&.fb
+			margin-right 0
+			margin-left 4px
+		&.inst
+			display inline-block
+			margin 0 3px
+		&.vk
+			display inline-block
+			margin-right 0
+
+.options_block
+	float left
+	margin-left 10px
+	margin-right 10px
+	margin-top 10px
+.option
+	margin-left 10px
+	float left
+	cursor pointer
+	display block
+	&:hover
+		color #f00
+	&.lang
+		color #000
+		text-decoration none
+		&:hover
+			color #f00
+	&.search
+		width 25px
+		height 25px
+		font 25px/25px 'Icons'
+		background-size cover
+	&.menu_option
+		font-family 'menu'
+		&:hover
+			color #f00
+
+.header_logo
+	display block
+	overflow hidden
+	width 115px
+	height 43px
+	float left
+	background url('/images/design/logo_black.png') 0 0 no-repeat
+	background-size 100%
+	.logo_title
+		margin-left 15px
+		color white
+		text-decoration none
+		width 190px
+		float left
+		font 8pt/10pt 'Roboto'
+
+.content_columns_block
+	overflow hidden
+	margin 0 auto
+
+.content_column
+	box-sizing border-box
+	&.main
+		overflow hidden
+		padding-bottom 65px
+		.content_title
+			padding-top 80px
+			margin-bottom 40px
+			font 36pt/38pt 'code_pro_lightregular'
+			font-weight 200
+		.column_main_inner
+			overflow-y scroll
+			overflow-x hidden
+			height 100%
+		.content_outer_block
+			//overflow hidden
+			//width 1540px
+			margin 0 auto
+			max-width 1490px
+			//background #fc0
+			.content_outer_block_inner
+				margin-top 63px
+				position relative
+	&.scroll
+		overflow hidden
+		width 320px
+		float left
+		.content_title
+			display none // !!!!!!!!!!
+			top 70px
+			width 320px
+			box-sizing border-box
+			padding 10px
+			position absolute
+			color white
+			text-shadow: 1px 1px 2px black
+			font 14pt/16pt 'code_pro_lightregular'
+		.content_scroll_items
+			overflow-y scroll
+			overflow-x hidden
+			width 335px
+			height 100%
+
+.content_navigate_block
+	overflow hidden
+	.navigate_title
+		font-size 12pt
+		float left
+		font-weight bold
+		margin-bottom 5px
+		margin-top 18px
+	.navigate_items_block
+		float left
+		.navigate_item
+			padding-left 4px
+			padding-right 4px
+			margin-left 5px
+			margin-right 11px
+			font-size 40pt
+			line-height 42pt
+			cursor pointer
+			margin-bottom 5px
+			position relative
+			text-transform uppercase
+			&:after
+				content ''
+				position absolute
+				left 100%
+				font-size 27pt
+				top 0px
+				background transparent
+				padding 0px 3px 0px 10px
+				line-height 42pt
+				color #f00
+				@media screen and (max-width: 1280px)
+					height 21px
+					line-height 23px
+			&:hover
+				color #9b9b9b
+			&.selected
+				color #f00
+				&:after
+					content '✕'
+.footer_block
+	font 10pt/12pt 'code_pro_lightregular'
+	padding-bottom 4px
+	text-align center
+	position fixed
+	bottom 0
+	left 0
+	right 0
+	background #fff
+	.social_block
+		float none
+		display block
+		text-align center
+		a
+			float none
+			display inline-block
+			color #000
+	.footer_block_inner
+		width 540px
+		margin 12px auto 10px
