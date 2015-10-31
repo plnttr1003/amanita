@@ -5,97 +5,28 @@ block title
 	title= __('ГЛАВНАЯ')
 
 block content_style
-	link(rel='stylesheet', type='text/css', href='/build/css/blocks_grid.css' + version)
+	link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic', rel='stylesheet', type='text/css')
+	//-link(rel='stylesheet', type='text/css', href='/build/css/blocks_grid.css' + version)
 	link(rel='stylesheet', type='text/css', href='/build/css/main.css' + version)
-	link(rel='stylesheet', type='text/css', href='/build/css/main_amanita.css' + version)
-	link(rel='stylesheet', type='text/css', href='/build/css/events_subsidiary_after.css' + version)
-	link(rel='stylesheet', type='text/css', href='/build/libs/css/jquery.fancybox.css' + version)
+	//-link(rel='stylesheet', type='text/css', href='/build/css/events_subsidiary_after.css' + version)
+	//-link(rel='stylesheet', type='text/css', href='/build/libs/css/jquery.fancybox.css' + version)
 
 block content_scripts
-	script(type='text/javascript', src='/build/libs/js/imagesloaded.pkgd.min.js' + version)
-	//-script(type='text/javascript', src='/build/libs/js/masonry.pkgd.min.js' + version)
+	//-script(type='text/javascript', src='/build/libs/js/imagesloaded.pkgd.min.js' + version)
 	script(type='text/javascript', src='/build/js/main.js' + version)
-	script(type='text/javascript', src='/build/js/main_layers.js' + version)
+	//-script(type='text/javascript', src='/build/js/main_layers.js' + version)
 
 block content
 	- ev_lnght = Math.floor(Math.random() * ((events.length - 1) - 0 + 1)) + 0
 
-	.screen_block.intro_block.container
-		.intro_block_inner.inner A M A N I T A
-			.pers.pers1
-			.pers.pers2
-			.pers.pers3
-			.pers.pers4
-			.pers.pers5
-			.pers.pers6
-			.pers.pers7
-			.pers.pers8
-			.pers.pers9
-			.pers.pers10
-			.pers.pers11
-			.pers.pers12
-			.pers.pers13
-			.pers.pers14
-			.pers.pers15
-			.pers.pers16
-			.pers.pers17
-			.pers.pers18
-			.pers.pers19
-			.pers.pers20
-			.pers.pers21
-			.pers.pers22
-			.pers.pers23
-			.pers.pers24
-			.pers.pers25
-			.pers.pers26
-			.pers.pers27
-			.pers.pers28
-			.pers.pers29
-			.pers.pers30
-			.pers.pers31
-			.pers.pers32
-
-	.screen_block.info_block
-		.info_block_inner
-			.content_navigate_block
-
-				if (categorys.length > 0)
-					.content_navigate_block.categorys
-						.navigate_title= __('Категории:')
-						.navigate_items_block
-							each category in categorys
-								.navigate_item(class=category._id.toString())= category.i18n.title.get(locale)
-
-		.goto_down
-			a.goto_down_inner.info
-
-	.screen_block.about_block
-		.about_block_inner
-			.about_block_image
-				img(src='/images/design/contacts/amanita.png')
-			.about_text_inner
-				if (locale == 'ru')
-					include ../static/content/contacts/ru.html
-				else
-					include ../static/content/contacts/en.html
-		.goto_down
-			a.goto_down_inner.about
-
-	.screen_block.contacts_block
-		.about_block_inner
-			.about_text_inner
-				//-iframe(src='/auth/feedback/add', width=700, height=760, frameborder=0, allowtransparency=1, scrolling=0)
-			.social_block
-				//-a.vk(href='https://vk.com/rossikhin')  
-				a.fb(href='https://www.facebook.com/amanita.erashov') 
-				a.inst(href='https://instagram.com/amanitaartist/')  
-				//-a.shutterstock(href='http://www.shutterstock.com/g/Arseniy+Rossikhin')
-		.goto_down
-			a.goto_down_inner.about
-
-	.content_outer_block
-		.content_outer_block_inner
-
-			.content_outer_block_inner
-				.content_events_block
-					+eventsList(events)
+	.slider
+		each event in events
+			.slider_image(href='/events/' + event.type +'/' + event._id, style='background-image: url(' + (event.images && event.images.length > 0 && event.images[0].original) + ')')
+				.content_image_description
+					.content_image_description_text= event.i18n.title.get(locale)
+	.about
+		.about_inner
+			if (locale == 'ru')
+				include ../static/content/contacts/ru.html
+			else
+				include ../static/content/contacts/en.html

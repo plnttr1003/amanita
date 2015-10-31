@@ -1,3 +1,14 @@
+body
+	margin 0
+	padding 0
+	font 12pt/14pt 'Roboto';
+	font-weight 100
+	overflow hidden
+
+html, body, .main_block, .content_block, .content_columns_block, .content_column, .column_inner_block
+	height 100%
+
+
 h1, h2, h3, h4, h5
 	font-weight normal
 	line-height 1em
@@ -12,18 +23,9 @@ h2
 h3
 	padding 20px 0 5px
 
-body
-	margin 0
-	padding 0
-	font 12pt/14pt 'code_pro_lightregular', 'Arimo'
-	font-weight 400
-	overflow hidden
-
-html, body, .main_block, .content_block, .content_columns_block, .content_column, .column_inner_block
-	height 100%
 
 .header_block
-	position absolute
+	//-position absolute
 	width 100%
 	background #fff
 	color #000
@@ -31,10 +33,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	&.black_header
 		background transparent
 		color #fff
-
-.header_logo
-	&:hover
-		opacity 0.6
 
 .search_block
 	width 100%
@@ -53,7 +51,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	outline none
 	padding-bottom 5px
 	border-bottom 1px solid white
-	font-family 'code_pro_lightregular'
 
 .search_result
 	width 100%
@@ -84,11 +81,10 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 .header_inner
 .search_inner
 	width 100%
-	padding-top 30px
 	padding 10px
 	margin 0 auto
 	overflow hidden
-	max-width 1490px
+	max-width 1000px
 
 .menu_block
 	overflow hidden
@@ -100,7 +96,7 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			.menu_item
 				display block
 				margin-top 4px
-				font 12pt/14pt 'code_pro_lightregular'
+				font 12pt/14pt 'Roboto'
 				text-decoration none
 				padding-bottom 3px
 				&:hover
@@ -155,7 +151,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 .options_block
 	float left
 	margin-left 10px
-	margin-right 10px
 	margin-top 10px
 .option
 	margin-left 10px
@@ -183,9 +178,12 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	display block
 	overflow hidden
 	width 115px
-	height 43px
+	height 30px
 	float left
 	background-size 100%
+	margin-top 10px
+	color #333
+	text-decoration none
 	.logo_title
 		margin-left 15px
 		color white
@@ -193,40 +191,30 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		width 190px
 		float left
 		font 8pt/10pt 'Roboto'
+	&:hover
+		color #f00
 
 .content_columns_block
 	overflow hidden
 	margin 0 auto
+	max-width 1000px
 
 .content_column
 	box-sizing border-box
 	&.main
 		overflow hidden
-		//padding-bottom 65px
 		.content_title
 			padding-top 80px
 			margin-bottom 40px
-			font 36pt/38pt 'code_pro_lightregular'
+			font 36pt/38pt 'Roboto'
 			font-weight 200
 		.column_main_inner
-			overflow-y hidden
-			overflow-x hidden
-			height 100%
-		.content_outer_block
-			//overflow hidden
-			//width 1540px
-			margin 0 auto
-			max-width 100vmin
-			//background #fc0
-			.content_outer_block_inner
-				margin-top 63px
-				position relative
+			margin-top 0px
 	&.scroll
 		overflow hidden
 		width 320px
 		float left
 		.content_title
-			display none // !!!!!!!!!!
 			top 70px
 			width 320px
 			box-sizing border-box
@@ -234,7 +222,7 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			position absolute
 			color white
 			text-shadow: 1px 1px 2px black
-			font 14pt/16pt 'code_pro_lightregular'
+			font 14pt/16pt 'karla'
 		.content_scroll_items
 			overflow-y scroll
 			overflow-x hidden
@@ -282,7 +270,8 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 				&:after
 					content '✕'
 .footer_block
-	font 10pt/12pt 'code_pro_lightregular'
+	font 10pt/12pt 'Roboto'
+	font-weight 100
 	padding-bottom 4px
 	text-align center
 	position fixed

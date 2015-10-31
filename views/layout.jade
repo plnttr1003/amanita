@@ -11,16 +11,14 @@ html
 					a.header_logo(href='/') AMANITA
 					.menu_block.right
 						.options_block
-							.option.menu_item.about= __('Обо мне')
-							.option.menu_item.contacts= __('Контакты')
-							.option.menu_option 
-							if (locale == 'ru')
+							//-.option.menu_item.about= __('Обо мне')
+							//-.option.menu_item.contacts= __('Контакты')
+							.option.menu_item Contacts
+							//-if (locale == 'ru')
 								a.option.lang(href='/lang/en') EN
-							else
+							//-else
 								a.option.lang(href='/lang/ru') RU
 			.content_block
-				.content_up_block
-					block content_up
 				.content_columns_block
 					.content_column.main
 						.column_main_inner
