@@ -10,5 +10,5 @@ $(document).ready(function() {
 		{$('.slider_image').eq(0).css({'z-index':'10','opacity':'1'}); i=0}
 		i++;
 	}
-	setInterval(showOpacity,2000);
+	setInterval(showOpacity,5000);
 });
