@@ -1,21 +1,15 @@
 body
 	margin 0
 	padding 0
-	font 12pt/14pt 'Roboto';
+	font 12pt/14pt 'karla'
 	font-weight 100
-	overflow hidden
-
-html, body, .main_block, .content_block, .content_columns_block, .content_column, .column_inner_block
-	height 100%
 
 
 h1, h2, h3, h4, h5
 	font-weight normal
 	line-height 1em
 	margin 0
-
-h1
-	padding 35px 0 10px
+	padding 0
 
 h2
 	padding 30px 0 8px
@@ -23,16 +17,12 @@ h2
 h3
 	padding 20px 0 5px
 
-
 .header_block
-	//-position absolute
 	width 100%
 	background #fff
 	color #000
 	z-index 10
-	&.black_header
-		background transparent
-		color #fff
+	height 130px
 
 .search_block
 	width 100%
@@ -74,17 +64,19 @@ h3
 	display block
 	text-decoration none
 	margin-top 10px
-	font 14pt/16pt 'Roboto'
+	font 14pt/16pt 'karla'
 	&:hover
 		color rgb(196, 20, 59)
 
 .header_inner
 .search_inner
 	width 100%
-	padding 10px
+	padding 40px 0
 	margin 0 auto
 	overflow hidden
-	max-width 1000px
+	max-width 950px
+	font-size 24px
+	font-weight bold
 
 .menu_block
 	overflow hidden
@@ -96,7 +88,7 @@ h3
 			.menu_item
 				display block
 				margin-top 4px
-				font 12pt/14pt 'Roboto'
+				font 12pt/14pt 'karla'
 				text-decoration none
 				padding-bottom 3px
 				&:hover
@@ -114,7 +106,7 @@ h3
 			&:hover .menu_drop
 				display block
 	&.right
-		float right
+		display block
 
 .social_block
 	margin 0 auto 100px
@@ -149,37 +141,23 @@ h3
 			margin-right 0
 
 .options_block
-	float left
-	margin-left 10px
-	margin-top 10px
-.option
-	margin-left 10px
-	float left
-	cursor pointer
-	display block
-	&:hover
-		color #f00
-	&.lang
-		color #000
-		text-decoration none
-		&:hover
-			color #f00
-	&.search
-		width 25px
-		height 25px
-		font 25px/25px 'Icons'
-		background-size cover
-	&.menu_option
-		font-family 'menu'
-		&:hover
-			color #f00
+	.option
+		margin-right 10px
+		float left
+		display block
+		font-size 16px
+		&.menu_item
+			float right
+			margin-right 0
+			cursor pointer
+			&:hover
+				color #f00
 
 .header_logo
 	display block
 	overflow hidden
 	width 115px
-	height 30px
-	float left
+	height 32px
 	background-size 100%
 	margin-top 10px
 	color #333
@@ -190,14 +168,14 @@ h3
 		text-decoration none
 		width 190px
 		float left
-		font 8pt/10pt 'Roboto'
+		font 8pt/10pt 'karla'
 	&:hover
 		color #f00
 
 .content_columns_block
 	overflow hidden
 	margin 0 auto
-	max-width 1000px
+	max-width 950px
 
 .content_column
 	box-sizing border-box
@@ -206,7 +184,7 @@ h3
 		.content_title
 			padding-top 80px
 			margin-bottom 40px
-			font 36pt/38pt 'Roboto'
+			font 36pt/38pt 'karla'
 			font-weight 200
 		.column_main_inner
 			margin-top 0px
@@ -270,14 +248,9 @@ h3
 				&:after
 					content '✕'
 .footer_block
-	font 10pt/12pt 'Roboto'
 	font-weight 100
 	padding-bottom 4px
 	text-align center
-	position fixed
-	bottom 0
-	left 0
-	right 0
 	background #fff
 	.social_block
 		float none
@@ -288,5 +261,5 @@ h3
 			display inline-block
 			color #000
 	.footer_block_inner
-		width 540px
+		text-align left
 		margin 12px auto 10px

@@ -5,8 +5,8 @@ block title
 	title= __('ГЛАВНАЯ')
 
 block content_style
-	link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic', rel='stylesheet', type='text/css')
 	//-link(rel='stylesheet', type='text/css', href='/build/css/blocks_grid.css' + version)
+	//-link(rel='stylesheet', type='text/css', href='/build/libs/css/fonts.css' + version)
 	link(rel='stylesheet', type='text/css', href='/build/css/main.css' + version)
 	//-link(rel='stylesheet', type='text/css', href='/build/css/events_subsidiary_after.css' + version)
 	//-link(rel='stylesheet', type='text/css', href='/build/libs/css/jquery.fancybox.css' + version)
@@ -19,14 +19,17 @@ block content_scripts
 block content
 	- ev_lnght = Math.floor(Math.random() * ((events.length - 1) - 0 + 1)) + 0
 
+	.about
+		h1 about
+		.about_inner
+			//-if (locale == 'ru')
+				include ../static/content/contacts/ru.html
+			//-else
+				include ../static/content/contacts/en.html
+			| Amanita (Alexander Yerashov), is an artist of Russian origin born in Ermak, Kazakhstan in 1972. Amanita's graphic sheets can be paralleled to a scholastic treatise about the universe order: he forms his own world, creates his encyclopaedia from the mixture of the European and Asian cultures and their grotesque transformations in the Soviet and post-Soviet space. His phenomenal craftsmanship overwhelms one by the artist’s capacity for outstanding endurance evocative of the practice of medieval manuscript illustrators. In his daedalic sheets Amanita envisions an empire as a controversial bundle of Old Russian, Soviet, Asian, and European constituents.
+
 	.slider
 		each event in events
 			.slider_image(href='/events/' + event.type +'/' + event._id, style='background-image: url(' + (event.images && event.images.length > 0 && event.images[0].original) + ')')
 				.content_image_description
 					.content_image_description_text= event.i18n.title.get(locale)
-	.about
-		.about_inner
-			if (locale == 'ru')
-				include ../static/content/contacts/ru.html
-			else
-				include ../static/content/contacts/en.html
