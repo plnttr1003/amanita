@@ -15,7 +15,7 @@ h3
 body
 	margin 0
 	padding 0
-	font 2vmin/2.2vmin 'code_pro_lightregular', 'Arimo'
+	font 1.2vmax/1.4vmax 'code_pro_lightregular', 'Arimo'
 	font-weight 400
 	overflow hidden
 
@@ -24,10 +24,11 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 
 .header_block
 	position absolute
-	width 100%
 	background #fff
 	color #000
 	z-index 10
+	left 30px
+	right 30px
 	&.black_header
 		background transparent
 		color #fff
@@ -78,9 +79,16 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		color rgb(196, 20, 59)
 
 .header_inner
-	width 100vmin
-	margin 0 auto
+	width 87vmax
+	margin 1.5vmax auto
 	overflow hidden
+	.header_logo
+		font-size 2.4vmax
+		line-height 2.7vmax
+		color #000
+		text-decoration none
+		text-align center
+		display block
 
 .social_block
 	margin 0 auto 100px
@@ -105,11 +113,12 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			margin-right 0
 
 .options_block
+	margin-top 1vmax
+	text-align center
 	.option
 		margin-right 10px
-		float left
 		cursor pointer
-		display block
+		display inline-block
 		&:hover
 			color #f00
 		&.lang
@@ -127,9 +136,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			&:hover
 				color #f00
 
-.header_logo
-	display block
-	overflow hidden
 
 .content_columns_block
 	overflow hidden
@@ -150,29 +156,10 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			height 100%
 		.content_outer_block
 			margin 0 auto
-			max-width 100vmin
+			width 90vmax
 			.content_outer_block_inner
-				margin-top 8vmin
+				margin-top 6vmax
 				position relative
-	&.scroll
-		overflow hidden
-		width 320px
-		float left
-		.content_title
-			display none // !!!!!!!!!!
-			top 70px
-			width 320px
-			box-sizing border-box
-			padding 10px
-			position absolute
-			color white
-			text-shadow: 1px 1px 2px black
-			font 14pt/16pt 'code_pro_lightregular'
-		.content_scroll_items
-			overflow-y scroll
-			overflow-x hidden
-			width 335px
-			height 100%
 
 .content_navigate_block
 	overflow hidden
