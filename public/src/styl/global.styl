@@ -15,7 +15,7 @@ h3
 body
 	margin 0
 	padding 0
-	font 12pt/14pt 'code_pro_lightregular', 'Arimo'
+	font 2vmin/2.2vmin 'code_pro_lightregular', 'Arimo'
 	font-weight 400
 	overflow hidden
 
@@ -31,10 +31,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	&.black_header
 		background transparent
 		color #fff
-
-.header_logo
-	&:hover
-		opacity 0.6
 
 .search_block
 	width 100%
@@ -82,43 +78,9 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		color rgb(196, 20, 59)
 
 .header_inner
-.search_inner
-	width 100%
-	padding-top 30px
-	padding 10px
+	width 100vmin
 	margin 0 auto
 	overflow hidden
-	max-width 1490px
-
-.menu_block
-	overflow hidden
-	&.left
-		float left
-		.menu_item_block
-			margin-left 15px
-			float left
-			.menu_item
-				display block
-				margin-top 4px
-				font 12pt/14pt 'code_pro_lightregular'
-				text-decoration none
-				padding-bottom 3px
-				&:hover
-					color rgb(196, 20, 59)
-			.menu_drop
-				width 115px
-				margin-left -10px
-				padding-top 7px
-				position absolute
-				display none
-				.drop_inner
-					width 115px
-					padding 0 10px 10px 10px
-					background-color rgba(0, 0, 0, 0.7)
-			&:hover .menu_drop
-				display block
-	&.right
-		float right
 
 .social_block
 	margin 0 auto 100px
@@ -132,16 +94,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		text-decoration none
 		&:hover
 			color #f00
-		&.shutterstock
-			width 100px
-			background url('/images/design/shuttr.png') 0 -2px no-repeat
-			height 15px
-			display inline-block
-			background-size 100%
-			margin-right 0
-			margin-left 4px
-			&:hover
-				background-position 0 -18px
 		&.fb
 			margin-right 0
 			margin-left 4px
@@ -153,46 +105,31 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			margin-right 0
 
 .options_block
-	float left
-	margin-left 10px
-	margin-right 10px
-	margin-top 10px
-.option
-	margin-left 10px
-	float left
-	cursor pointer
-	display block
-	&:hover
-		color #f00
-	&.lang
-		color #000
-		text-decoration none
+	.option
+		margin-right 10px
+		float left
+		cursor pointer
+		display block
 		&:hover
 			color #f00
-	&.search
-		width 25px
-		height 25px
-		font 25px/25px 'Icons'
-		background-size cover
-	&.menu_option
-		font-family 'menu'
-		&:hover
-			color #f00
+		&.lang
+			color #000
+			text-decoration none
+			&:hover
+				color #f00
+		&.search
+			width 25px
+			height 25px
+			font 25px/25px 'Icons'
+			background-size cover
+		&.menu_option
+			font-family 'menu'
+			&:hover
+				color #f00
 
 .header_logo
 	display block
 	overflow hidden
-	width 115px
-	height 43px
-	float left
-	background-size 100%
-	.logo_title
-		margin-left 15px
-		color white
-		text-decoration none
-		width 190px
-		float left
-		font 8pt/10pt 'Roboto'
 
 .content_columns_block
 	overflow hidden
@@ -202,7 +139,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	box-sizing border-box
 	&.main
 		overflow hidden
-		//padding-bottom 65px
 		.content_title
 			padding-top 80px
 			margin-bottom 40px
@@ -213,13 +149,10 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			overflow-x hidden
 			height 100%
 		.content_outer_block
-			//overflow hidden
-			//width 1540px
 			margin 0 auto
 			max-width 100vmin
-			//background #fc0
 			.content_outer_block_inner
-				margin-top 63px
+				margin-top 8vmin
 				position relative
 	&.scroll
 		overflow hidden
