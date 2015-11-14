@@ -82,6 +82,9 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	width 87vmax
 	margin 1.5vmax auto
 	overflow hidden
+	@media screen and (max-aspect-ratio: 2/2)
+		width 87vmin
+		margin 1.5vmin auto
 	.header_logo
 		font-size 2.4vmax
 		line-height 2.7vmax
@@ -89,6 +92,10 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		text-decoration none
 		text-align center
 		display block
+		font-weight bold
+		@media screen and (max-aspect-ratio: 2/2)
+			font-size 4vmin
+			line-height 4.2vmin
 
 .social_block
 	margin 0 auto 100px
@@ -115,10 +122,14 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 .options_block
 	margin-top 1vmax
 	text-align center
+	font-weight bold
 	.option
 		margin-right 10px
 		cursor pointer
 		display inline-block
+		@media screen and (max-aspect-ratio: 2/2)
+			font-size 2vmin
+			line-height 2vmin
 		&:hover
 			color #f00
 		&.lang
@@ -136,7 +147,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			&:hover
 				color #f00
 
-
 .content_columns_block
 	overflow hidden
 	margin 0 auto
@@ -146,10 +156,24 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	&.main
 		overflow hidden
 		.content_title
-			padding-top 80px
-			margin-bottom 40px
-			font 36pt/38pt 'code_pro_lightregular'
-			font-weight 200
+			margin-bottom 2vmax
+			font-size 2.4vmax
+			line-height 2.7vmax
+			font-weight bold
+			letter-spacing 0.34vmax
+			text-align center
+			position fixed
+			top 8vmax
+			left 30px
+			right 30px
+			background #fff
+			z-index 100
+			@media screen and (max-aspect-ratio: 2/2)
+				top 11vmin
+				margin-bottom 2vmin
+				font-size 4vmin
+				line-height 4.2vmin
+				letter-spacing 0.34vmin
 		.column_main_inner
 			overflow-y hidden
 			overflow-x hidden
@@ -157,10 +181,13 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		.content_outer_block
 			margin 0 auto
 			width 90vmax
+			@media screen and (max-aspect-ratio: 2/2)
+				width 90vmin
 			.content_outer_block_inner
 				margin-top 6vmax
 				position relative
-
+				@media screen and (max-aspect-ratio: 2/2)
+					margin-top 6vmin
 .content_navigate_block
 	overflow hidden
 	.navigate_title

@@ -1,3 +1,7 @@
+.content_column.main
+	.column_main_inner
+		overflow-y scroll
+
 .screen_block
 	height 100%
 	&.info_block
@@ -84,7 +88,6 @@
 			padding 5px
 	&.contacts_block
 		position absolute
-		//overflow-y auto
 		width 100%
 		background rgba(0,0,0,0.85)
 		color #fff
@@ -158,20 +161,18 @@
 	display none
 
 .content_scroll_items
-.content_title
 	margin 0 auto
-	max-width 1490px
-
-.content_title_inner
-	padding 0 6px
+	max-width 90vmax
+	display none
 
 .item_fancy
 	display block
-	width 362px
-	height 237px
+	width 29%
+	height 31vmax
 	overflow hidden
-	margin-left 10px
-	margin-bottom 10px
+	margin-left 2%
+	margin-right 2%
+	margin-bottom 2vmin
 	background-size cover
 	background-position 50%
 	background-repeat no-repeat
@@ -200,3 +201,79 @@
 			background #000
 	&:hover
 		opacity 0.5
+
+.content_slider_items
+.content_arrow_items
+	position absolute
+	top 11vmax
+	bottom 3vmax
+	left 0
+	right 0
+	overflow hidden
+	.right
+	.left
+		position absolute
+		top 0
+		width 10vmax
+		height 100%
+		z-index 100
+		cursor pointer
+		&:after
+			display block
+			content ''
+			position absolute
+			top 50%
+			height 2vmax
+			width 2vmax
+			margin-top -1vmax
+			transform rotate(45deg)
+			transform-origin 50%
+			z-index 100
+		&.right
+			right 0
+			&:after
+				right 2vmax
+				border-right 1px solid #000
+				border-top 1px solid #000
+		&.left
+			left 0
+			&:after
+				left 2vmax
+				border-left 1px solid #000
+				border-bottom 1px solid #000
+		&:hover
+			&:after
+				border-color #222
+	@media screen and (max-aspect-ratio: 2/2)
+		top 11vmin
+		bottom 3vmin
+	.item_slider
+		height 100%
+		left 0
+		right 0
+		top 0
+		position absolute
+		overflow hidden
+		opacity 0
+		z-index -10
+		transition-property opacity
+		transition-duration 0.5s
+		transition-timing-function ease-in-out
+		&:nth-child(1)
+			opacity 1
+			z-index 10
+		.item_image
+			position relative
+			background-size contain
+			background-position 50%
+			background-repeat no-repeat
+			height 90%
+			width 90vmax
+			margin 0 auto
+			@media screen and (max-aspect-ratio: 2/2)
+				width 90vmin
+		.item_description
+			position absolute
+			top 92%
+			text-align center
+			width 100%

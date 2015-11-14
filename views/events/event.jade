@@ -42,11 +42,8 @@ block content
 	.screen_block.about_block
 		.about_block_inner
 			.about_block_image
-				img(src='/images/design/photo.jpg')
+				img(src='/images/design/contacts/amanita.png')
 			.about_text_inner
-				if (locale == 'ru')
-					include ../static/content/contacts/ru.html
-				else
 					include ../static/content/contacts/en.html
 		.goto_down
 			a.goto_down_inner.about
@@ -56,10 +53,8 @@ block content
 			.about_text_inner
 				iframe(src='/auth/feedback/add', width=700, height=760, frameborder=0, allowtransparency=1, scrolling=0)
 			.social_block
-				a.vk(href='https://vk.com/rossikhin')  
-				a.fb(href='https://www.facebook.com/arseny.rossikhin') 
-				a.inst(href='https://instagram.com/rossikhinarseny/')  
-				a.shutterstock(href='http://www.shutterstock.com/g/Arseniy+Rossikhin')
+				a.fb(href='https://www.facebook.com/amanita.erashov') 
+				a.inst(href='https://instagram.com/amanitaartist/')  
 		.goto_down
 			a.goto_down_inner.about
 
@@ -67,10 +62,20 @@ block content
 	- function get_locale(option, lang) {var locale = option.filter(function(locale) { return locale.lg == lang })[0]; if (locale) {return locale.value } else {return ''} }
 	.content_title
 		.content_title_inner= event.i18n.title.get(locale)
-				if (!event.i18n.description.get(locale))
-				else
-					a.item_fancy.text(href='#description')
-					#description= event.i18n.description.get(locale)
 	.content_scroll_items
 		each image in event.images.reverse()
 			a.item_fancy(href=image.original, data-fancybox-group='image', style='background-image:url('+image.thumb+')')
+
+	.content_arrow_items
+		if (event.images.length > 1)
+			.right
+			.left
+
+	.content_slider_items
+		- function get_locale(option, lang) {var locale = option.filter(function(locale) { return locale.lg == lang })[0]; if (locale) {return locale.value } else {return ''} }
+			each image in event.images.reverse()
+				.item_slider
+					.item_image(style='background-image:url('+image.original+')')
+						- var description = get_locale(image.description, locale)
+							if (description != '')
+					.item_description: != description

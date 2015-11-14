@@ -23,24 +23,16 @@ block content
 	- year = year.getFullYear()
 	- var months = ['ЯНВАРЬ', 'ФЕВРАЛЬ', 'МАРТ', 'АПРЕЛЬ', 'МАЙ', 'ИЮНЬ', 'ИЮЛЬ', 'АВГУСТ', 'СЕНТЯБРЬ', 'ОКТЯБРЬ', 'НОЯБРЬ', 'ДЕКАБРЬ']
 	.form_block
-		//- a.back_link(href='/auth/halls') < Назад
-		//- button.toggle_eng(type='button') перевод
-		p.name= __('Арсений Россихин')
-		p.phone +7 (925) 729-79-81
+		p.name A M A N I T A
 		p.email
-			a(href="mailto:rossikhinarseny@mail.ru") rossikhinarseny@mail.ru
+			a(href="amanitaartist@gmail.com") amanitaartist@gmail.com
 
 
 		form(action="", method="post")
-			.form_title= __('Ваше имя...')
+			.form_title= __('Your name...')
 			+form_text_single('title')
 			.form_title= __('E-mail...')
 			+form_text_single('s_title')
-			.form_title= __('Сообщение...')
+			.form_title= __('Message...')
 			+form_text_multi('description')
-			if (locale == 'ru')
-				input(type='submit', value='отправить сообщение')
-			else
-				input(type='submit', value='send message')
-
-			//- button.toggle_eng перевод
+			input(type='submit', value='send message')

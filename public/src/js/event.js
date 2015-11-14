@@ -1,7 +1,43 @@
 $(document).ready(function() {
+
+var count = $('.item_slider').length;
+var i = 0;
+var left = 'left';
+var right = 'right'
+
+var showOpacity = function showOpacity(dir) {
+	if (dir === 'left') {++i
+			$('.item_slider').css({'z-index':'-10', 'opacity': '0'});
+			if (i < count)
+				{$('.item_slider').eq(i).css({'z-index':'10','opacity':'1'})}
+			else
+			{$('.item_slider').eq(0).css({'z-index':'10','opacity':'1'});
+			i = 0;
+		}
+	}
+	else {
+			--i
+			$('.item_slider').css({'z-index':'-10', 'opacity': '0'});
+			if (i > -1)
+				{$('.item_slider').eq(i).css({'z-index':'10','opacity':'1'})}
+			else
+			{$('.item_slider').eq(count - 1).css({'z-index':'10','opacity':'1'});
+			i = count - 1;
+		}
+	}
+}
+
+	$('.left').click(function(){
+		showOpacity(left);
+	})
+
+	$('.right').click(function(){
+		showOpacity(right);
+	})
+
+
+
 	$('.content_scroll_items').masonry({
-	  columnWidth: 362,
-	  "gutter": 10,
 	  itemSelector: '.item_fancy'
 	});
 
