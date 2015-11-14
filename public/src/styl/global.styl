@@ -93,6 +93,11 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		text-align center
 		display block
 		font-weight bold
+		transition-timing-function linear
+		transition-duration 0.6s
+		transition-property background,color
+		&:hover
+			color #f00
 		@media screen and (max-aspect-ratio: 2/2)
 			font-size 4vmin
 			line-height 4.2vmin
