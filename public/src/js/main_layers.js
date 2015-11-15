@@ -37,10 +37,6 @@ function intro_runction() {
 
 		$('.menu_item.about').click(function () {
 			var scr = $('body').height();
-			/*$('.about_block').show().css({'margin-top': - parseInt(scr) }).animate({
-				marginTop: 0,
-			}, 800);
-			*/
 			$('.about_block').show();
 			$('.info_block, .contacts_block').hide();
 			$('.header_block').addClass('black_header');
@@ -48,10 +44,6 @@ function intro_runction() {
 
 		$('.menu_item.contacts').click(function () {
 			var scr = $('body').height();
-			/*$('.about_block').show().css({'margin-top': - parseInt(scr) }).animate({
-				marginTop: 0,
-			}, 800);
-			*/
 			$('.contacts_block').show();
 			$('.info_block, .about_block').hide();
 			$('.header_block').addClass('black_header');
