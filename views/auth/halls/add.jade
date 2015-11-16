@@ -23,9 +23,15 @@ block content
 	- year = year.getFullYear()
 	- var months = ['ЯНВАРЬ', 'ФЕВРАЛЬ', 'МАРТ', 'АПРЕЛЬ', 'МАЙ', 'ИЮНЬ', 'ИЮЛЬ', 'АВГУСТ', 'СЕНТЯБРЬ', 'ОКТЯБРЬ', 'НОЯБРЬ', 'ДЕКАБРЬ']
 	.form_block
-		p.name A M A N I T A
-		p.email
-			a(href="amanitaartist@gmail.com") amanitaartist@gmail.com
+		.form_info
+			p.name A M A N I T A
+			p.email
+				a(href="amanitaartist@gmail.com") amanitaartist@gmail.com
+			.social_block
+				a.fb(href='https://www.facebook.com/amanita.erashov') 
+					span /amanita.erashov
+				a.inst(href='https://instagram.com/amanitaartist/')  
+					span @amanita.erashov
 
 
 		form(action="", method="post")
