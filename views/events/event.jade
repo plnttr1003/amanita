@@ -70,9 +70,12 @@ block content
 
 	.content_slider_items
 		- function get_locale(option, lang) {var locale = option.filter(function(locale) { return locale.lg == lang })[0]; if (locale) {return locale.value } else {return ''} }
+
 			each image in event.images.reverse()
 				.item_slider
 					.item_image(style='background-image:url('+image.original+')')
 						- var description = get_locale(image.description, locale)
 							if (description != '')
 					.item_description: != description
+			if (event.i18n.description.get(locale))
+				.item_slider.item_descr: != event.i18n.description.get(locale)

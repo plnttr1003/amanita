@@ -7,7 +7,6 @@ block title
 block content_style
 	link(rel='stylesheet', type='text/css', href='/build/css/blocks_grid.css' + version)
 	link(rel='stylesheet', type='text/css', href='/build/css/main.css' + version)
-	link(rel='stylesheet', type='text/css', href='/build/css/main_amanita.css' + version)
 	link(rel='stylesheet', type='text/css', href='/build/css/events_subsidiary_after.css' + version)
 	link(rel='stylesheet', type='text/css', href='/build/libs/css/jquery.fancybox.css' + version)
 
@@ -21,18 +20,15 @@ block content
 	- ev_lnght = Math.floor(Math.random() * ((events.length - 1) - 0 + 1)) + 0
 
 	.screen_block.info_block
-		.info_block_inner
-			.content_navigate_block
+		.content_slider
+			.right
+			.left
+			each event in events
+				if (event.type == 'exhibition')
+					a.content_scroll_item(href='/albums/' + event._id, style='background-image: url(' + (event.images && event.images.length > 0 && event.images[0].original) + ')')
+						.content_image_description
+							.content_image_description_text= event.i18n.title.get(locale)
 
-				if (categorys.length > 0)
-					.content_navigate_block.categorys
-						.navigate_title= __('Категории:')
-						.navigate_items_block
-							each category in categorys
-								.navigate_item(class=category._id.toString())= category.i18n.title.get(locale)
-
-		.goto_down
-			a.goto_down_inner.info
 
 	.screen_block.about_block
 		.about_block_inner
