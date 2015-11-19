@@ -313,6 +313,8 @@ app.route('/registr')
 // === Contacts Route
 app.route('/contacts').get(content.contacts);
 
+app.route('/google851b5b52d0dc7a3e.html').get(content.htm);
+
 
 // ------------------------
 // *** Options Routers Block ***

@@ -21,3 +21,7 @@ exports.schedule = function(req, res) {
 exports.contacts = function(req, res) {
   res.render('static/contacts');
 }
+
+exports.htm = function(req, res) {
+  res.render('static/htm');
+}
