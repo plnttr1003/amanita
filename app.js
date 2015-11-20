@@ -120,13 +120,6 @@ app.route('/albums')
 	app.route('/albums/:id').get(events.event);
 
 
-// === Subsidiarys Route
-app.route('/subsidiarys').get(subsidiarys.index);
-
-// === Subsidiary Route
-app.route('/subsidiarys/:id').get(subsidiarys.subsidiary);
-
-
 // ------------------------
 // *** Admin Users Routes Block ***
 // ------------------------
