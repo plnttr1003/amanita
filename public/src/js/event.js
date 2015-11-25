@@ -37,10 +37,6 @@ var showOpacity = function showOpacity(dir) {
 
 
 
-	$('.content_scroll_items').masonry({
-	  itemSelector: '.item_fancy'
-	});
-
 function intro_runction() {
 	var scr = $('body').height();
 	$('.intro_block').animate({

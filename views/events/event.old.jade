@@ -1,0 +1,114 @@
+extends ../layout
+
+block title
+	if (!event.i18n.title.get(locale))
+		title= '####'
+	else
+		title= event.i18n.title.get(locale).toUpperCase()
+	if (!event.i18n.description.get(locale))
+	else
+		meta(name='description', content=event.i18n.description.get(locale).replace(/<[^>]+>/g,' '))
+		meta(property='og:description', content=event.i18n.description.get(locale).replace(/<[^>]+>/g,' '))
+	each image in event.images
+		meta(property='og:image', content=image.thumb)
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/build/libs/css/leaflet.css' + version)
+	link(rel='stylesheet', type='text/css', href='/build/css/blocks_grid.css' + version)
+	link(rel='stylesheet', type='text/css', href='/build/css/event.css' + version)
+
+block content_scripts
+	script(type='text/javascript', src='/build/libs/js/leaflet.js' + version)
+	script(type='text/javascript', src='/build/js/event.js' + version)
+	script(type='text/javascript', src='/build/js/object.js' + version)
+
+mixin compareInterval(start, end)
+	if (start.getDate() == end.getDate() && start.getMonth() == end.getMonth() && start.getFullYear() == end.getFullYear())
+		!= start.getDate() + ' ' + months[event.interval.start.getMonth()] + ' ' + start.getFullYear()
+	else
+		!= start.getDate() + ' ' + months[start.getMonth()] + ' ' + start.getFullYear() + ' - ' + end.getDate() + ' ' + months[end.getMonth()] + ' ' + end.getFullYear()
+
+
+block content
+	- var views = {plan: 'План', front: 'Фасад', perspective: 'Аксонометрия', general_view: 'Общий вид', master_plan: 'Генеральный план',  panorama: 'Панорама', main_front: 'Главный фасад', short_form: 'Малая форма', sculpture: 'Скульптура', interior: 'Интерьер', part: 'Деталь', other: 'Другое'}
+	- var technique = {engraving: 'Гравюра', lithography: 'Литография', photo: 'Фотография', drawing: 'Чертеж', painting: 'Живопись', picture: 'Рисунок', sculpture: 'Скульптура', maket: 'Макет', other: 'Другое'}
+
+	.images_descriptons_block
+		.descriptions_block
+			each subject in event.subjects
+				.description_item.subjects
+					.description_item_block
+						if (subject.meta.author && subject.meta.author.length > 0)
+								.subject_author= subject.meta.i18n.author.get(locale)
+					.description_item_block
+						.subject_title= subject.i18n.title.get(locale)
+					.description_item_block
+						if (subject.meta.date && subject.meta.date.length > 0)
+							.style_title_date= subject.meta.i18n.date.get(locale)
+						if (subject.meta.technique.tag)
+							.subject_item_block
+								if (!subject.meta.technique.hidden)
+									.subject_description_item= technique[subject.meta.technique.tag]
+								.subject_description_comment= subject.meta.technique.i18n.comment.get(locale)
+						if (subject.meta.size && subject.meta.size.length > 0)
+							.subject_description_item= subject.meta.i18n.size.get(locale)
+						if (subject.meta.inventory)
+							.subject_description_item= subject.meta.inventory
+						.description_item_block
+							.subject_description: != subject.i18n.description.get(locale)
+
+	.object_subjects_block#subjects_view
+
+	.screen_block.info_block
+		.info_block_inner
+			.content_navigate_block
+
+		.goto_down
+			a.goto_down_inner.info
+
+	.screen_block.about_block
+		.about_block_inner
+			.about_block_image
+				img(src='/images/design/contacts/amanita.png')
+			.about_text_inner
+					include ../static/content/contacts/en.html
+		.goto_down
+			a.goto_down_inner.about
+
+	.screen_block.contacts_block
+		.about_block_inner
+			.about_text_inner
+				iframe(src='/auth/feedback/add', width=880, height=760, frameborder=0, allowtransparency=1, scrolling=0)
+		.goto_down
+			a.goto_down_inner.about
+
+
+	- function get_locale(option, lang) {var locale = option.filter(function(locale) { return locale.lg == lang })[0]; if (locale) {return locale.value } else {return ''} }
+	.content_title
+		.content_title_inner= event.i18n.title.get(locale)
+
+	.content_arrow_items
+		if (event.images.length > 1)
+			.right
+			.left
+
+	.content_slider_items
+		- function get_locale(option, lang) {var locale = option.filter(function(locale) { return locale.lg == lang })[0]; if (locale) {return locale.value } else {return ''} }
+
+			//-each image in event.images.reverse()
+				.item_slider
+					.item_image(style='background-image:url('+image.original+')')
+						- var description = get_locale(image.description, locale)
+							if (description != '')
+					.item_description: != description
+			if (event.i18n.description.get(locale))
+				.item_slider.item_descr: != event.i18n.description.get(locale)
+
+
+
+	.content_slider_items
+			each subject in event.subjects
+				.item_slider.yy
+					.item_image.object_slide_item.subjects(path=subject._id, style='background-image:url('+ subject.image.thumb + ')')
+					if (subject.i18n.title.get(locale))
+						.item_slider.item_descr:= subject.i18n.title.get(locale).substr(0, 60) + '...'

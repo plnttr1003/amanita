@@ -24,4 +24,15 @@ block content
 			.event(class= event.type + ' ' + event.categorys.join(' '))
 				a.rm_event(href='#', id=event._id)= 'удалить '
 				!=' | '
-				a(href='/auth/albums/edit/' + event._id)= event.i18n.title.get('ru') ? event.i18n.title.get('ru') : 'Заголовок альбома'
+				a(href='/auth/albums/edit/' + event._id)= event.i18n.title.get('ru') ? event.i18n.title.get('ru') : 'Заголовок альбома |'
+
+				a(href='/auth/albums/' + event._id + '/subjects') | единицы хранения
+				if event.subjects.length > 0
+					span(style='color: blue; padding-left: 5px;')= '[' + event.subjects.length + ']'
+//-				span.object_options
+					if event.ages.sub.length == 0
+						img(src='/images/design/bus/obj_logo_1.gif').option.not_ages
+					if event.images.length == 0
+						img(src='/images/design/bus/obj_logo_2.gif').option.not_images
+					if event.subjects.length == 0
+						img(src='/images/design/bus/obj_logo_3.gif').option.not_subjects

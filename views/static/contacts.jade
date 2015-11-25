@@ -8,6 +8,14 @@ block content_style
 	link(rel='stylesheet', type='text/css', href='/build/css/contacts_mobile.css' + version)
 
 block content_scripts
-
+	script(type='text/javascript', src='/build/js/contacts.js' + version)
 
 block content
+	#container
+		input#to(type='text', placeholder='Enter E-mail ID where you want tosend')
+		input#subject(type='text', placeholder='Write Subject')
+		textarea#content(cols='40', rows='5', placeholder='Write what you want to send')
+
+		button#send_email= 'Send Email'
+		span#message
+	</div>

@@ -10,6 +10,24 @@ var express = require('express'),
 		methodOverride = require('method-override'),
 			app = express();
 
+var nodemailer = require("nodemailer"); // ___!!!___nodemailer___!!!___
+
+
+
+var transporter = nodemailer.createTransport()
+transporter.sendMail({
+    //from: 'sender@address',
+    //to: 'receiver@address',
+    //subject: 'hello',
+    //text: 'hello world!'
+});
+
+
+
+
+
+
+
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.locals.pretty = true;
@@ -60,7 +78,7 @@ app.use(function(req, res, next) {
 
 var main = require('./routes/main.js');
 var events = require('./routes/events.js');
-
+var subjects = require('./routes/subjects.js');
 
 //var halls = require('./routes/admin/halls.js');
 
@@ -76,6 +94,9 @@ var admin_users = require('./routes/admin/users.js');
 var admin_halls = require('./routes/admin/halls.js');
 var admin_subsidiarys = require('./routes/admin/subsidiarys.js');
 var admin_events = require('./routes/admin/events.js');
+
+var admin_subjects = require('./routes/admin/subjects.js');
+
 var admin_categorys = require('./routes/admin/categorys.js');
 
 var admin_contacts = require('./routes/admin/contacts.js');
@@ -110,6 +131,11 @@ app.route('/')
 app.route('/albums')
 	.get(events.index)
 	.post(events.get_events);
+
+
+app.route('/subjects').get(subjects.index);
+
+app.route('/subjects/:id').get(subjects.subject);
 
 // === Events Tag Route
 //app.route('/albums/:type').get(events.index);
@@ -230,6 +256,28 @@ app.route('/auth/albums/remove')
 
 
 
+
+// === Admin subjects Route
+app.route('/auth/albums/:event_id/subjects').get(checkAuth, admin_subjects.list);
+
+
+// === Admin @add subjects Route
+app.route('/auth/albums/:event_id/subjects/add')
+	 .get(checkAuth, admin_subjects.add)
+	 .post(checkAuth, admin_subjects.add_form);
+
+
+// === Admin @edit subjects Route
+app.route('/auth/albums/:event_id/subjects/edit/:subject_id')
+	 .get(checkAuth, admin_subjects.edit)
+	 .post(checkAuth, admin_subjects.edit_form);
+
+
+// === Admin @add tiles Route
+app.route('/tiles_gen')
+	 .post(admin_subjects.tiles_gen)
+
+
 // ------------------------
 // *** Admin Categorys Routes Block ***
 // ------------------------
@@ -303,8 +351,32 @@ app.route('/registr')
 
 
 
+
+app.get('/',function(req,res){res.sendfile('index.html');});
+app.get('/send',function(req,res){
+	var mailOptions = {
+	to : req.query.to,
+	from: 'info@amanita.gallery',
+	subject : req.query.subject,
+	text : req.query.text
+	}
+console.log(mailOptions);
+transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        return console.log(error);
+    }
+    console.log('Message sent: ' + info.response);
+});
+})
+
+
+
 // === Contacts Route
 app.route('/contacts').get(content.contacts);
+
+
+
+
 
 app.route('/google851b5b52d0dc7a3e.html').get(content.htm);
 

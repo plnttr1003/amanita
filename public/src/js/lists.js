@@ -9,6 +9,17 @@ $(document).ready(function() {
 		}
 	}
 
+
+	function tiles_gen(event) {
+		var $this = $(this);
+		var id  = $this.attr('id');
+		$this.off().removeClass('ok');
+		$.post('/tiles_gen', {subject_id: id}).done(function(result) {
+			$this.addClass('ok').on('click', tiles_gen);
+		});
+	}
+
+
 	$('.rm_user').on('click', {path:'/auth/users/remove', description: 'Удалить пользователя?'}, remove);
 	$('.rm_news').on('click', {path:'/auth/news/remove', description: 'Удалить новость?'}, remove);
 	$('.rm_event').on('click', {path:'/auth/events/remove', description: 'Удалить альбом?'}, remove);
@@ -19,5 +30,8 @@ $(document).ready(function() {
 	$('.rm_subsidiary').on('click', {path:'/auth/subsidiarys/remove', description: 'Удалить страну?'}, remove);
 	$('.rm_gallery').on('click', {path:'/auth/gallerys/remove', description: 'Удалить фотографию?'}, remove);
 	$('.rm_magazine').on('click', {path:'/auth/magazines/remove', description: 'Удалить журнал?'}, remove);
+
+	$('.tiles_gen').on('click', tiles_gen);
+
 
 });

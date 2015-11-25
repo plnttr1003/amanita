@@ -54,6 +54,7 @@ var eventSchema = new Schema({
 	description: { type: String, trim: true, locale: true },
 	subsidiary: { type: Schema.Types.ObjectId, ref: 'Subsidiary' },
 	categorys: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
+	subjects: [{ type: Schema.Types.ObjectId, ref: 'Subject' }],
 	interval: {
 		hidden: Boolean,
 		start: Date,
@@ -69,6 +70,40 @@ var eventSchema = new Schema({
 	}],
 	date: {type: Date, default: Date.now}
 });
+
+
+
+
+var subjectSchema = new Schema({
+	title: { type: String, trim: true, locale: true },
+	description: { type: String, trim: true, locale: true },
+	//categorys: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
+	meta: {
+		technique: {
+			tag: String,
+			hidden: Boolean,
+			comment: { type: String, trim: true, locale: true }
+		},
+		size: { type: String, trim: true, locale: true },
+		date: { type: String, trim: true, locale: true },
+		author: { type: String, trim: true, locale: true },
+		inventory: String,
+		interval: {
+			start: Date,
+			end: Date
+		}
+	},
+	image: {
+		original: String,
+		thumb: String,
+		tiles: String
+	},
+	date: {type: Date, default: Date.now}
+});
+
+
+
+
 
 var categorySchema = new Schema({
 	title: { type: String, trim: true, locale: true },
@@ -99,6 +134,7 @@ hallSchema.plugin(mongooseLocale);
 subsidiarySchema.plugin(mongooseLocale);
 eventSchema.plugin(mongooseLocale);
 categorySchema.plugin(mongooseLocale);
+subjectSchema.plugin(mongooseLocale);
 
 
 // ------------------------
@@ -107,6 +143,12 @@ categorySchema.plugin(mongooseLocale);
 
 
 eventSchema.index({'title.value': 'text', 'description.value': 'text'}, {language_override:'lg', default_language: 'ru'});
+subjectSchema.index({'title.value': 'text', 'description.value': 'text'}, {language_override:'lg', default_language: 'ru'});
+
+
+//architectSchema.set('autoIndex', true);
+eventSchema.set('autoIndex', true);
+subjectSchema.set('autoIndex', true);
 
 
 // ------------------------
@@ -119,3 +161,4 @@ module.exports.Hall = mongoose.model('Hall', hallSchema);
 module.exports.Subsidiary = mongoose.model('Subsidiary', subsidiarySchema);
 module.exports.Event = mongoose.model('Event', eventSchema);
 module.exports.Category = mongoose.model('Category', categorySchema);
+module.exports.Subject = mongoose.model('Subject', subjectSchema);

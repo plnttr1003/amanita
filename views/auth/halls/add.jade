@@ -13,9 +13,8 @@ block content_style
 block content_scripts
 	script(type='text/javascript', src='/build/libs/js/wysiwyg.js')
 	script(type='text/javascript', src='/build/libs/js/wysiwyg-editor.js')
-	script(type='text/javascript', src='/build/libs/js/jquery-ui-1.10.4.custom.min.js')
-	script(type='text/javascript', src='/build/libs/js/jquery.filedrop.js')
-	script(type='text/javascript', src='/build/js/upload.js')
+	script(type='text/javascript', src='/build/js/contacts.js' + version)
+	//-script(type='text/javascript', src='/build/js/upload.js')
 	script(type='text/javascript', src='/build/js/add.js')
 
 block content
@@ -42,3 +41,12 @@ block content
 			.form_title= __('Message...')
 			+form_text_multi('description')
 			input(type='submit', value='send message')
+
+
+	#container
+		input#to(type='text', placeholder='Enter E-mail ID where you want tosend')
+		input#subject(type='text', placeholder='Write Subject')
+		textarea#content(cols='40', rows='5', placeholder='Write what you want to send')
+
+		button#send_email= 'Send Email'
+		span#message

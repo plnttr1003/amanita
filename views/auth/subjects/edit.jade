@@ -1,0 +1,60 @@
+extends ../../layout
+
+block title
+	title РЕДАКТИРОВАТЬ ЕДИНИЦУ ХРАННЕНИЯ
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/build/css/add.css')
+
+block content_scripts
+	script(type='text/javascript', src='/build/js/add.js')
+
+block content
+	.form_block
+		a.back_link(href='/auth/objects') < Назад
+		.title РЕДАКТИРОВАТЬ ЕДИНИЦУ ХРАННЕНИЯ
+		form(action="", method="post", enctype="multipart/form-data")
+			.form_title Заголовок:
+			input.ru(type="text", name="ru[title]", value=subject.i18n.title.get('ru'))
+			input.en(type="text", name="en[title]", disabled, value=subject.i18n.title.get('en'))
+			.form_title Описание:
+			textarea.ru(name="ru[description]", rows="8",)= subject.i18n.description.get('ru')
+			textarea.en(name="en[description]", rows="8", disabled,)=subject.i18n.description.get('en')
+			.form_title Техника:
+			select(name='technique[tag]')
+				option(value='engraving', selected=subject.meta.technique.tag=='engraving') Гравюра
+				option(value='lithography', selected=subject.meta.technique.tag=='lithography') Литография
+				option(value='photo', selected=subject.meta.technique.tag=='photo') Фотография
+				option(value='drawing', selected=subject.meta.technique.tag=='drawing') Чертеж
+				option(value='painting', selected=subject.meta.technique.tag=='painting') Живопись
+				option(value='picture', selected=subject.meta.technique.tag=='picture') Рисунок
+				option(value='watercolor', selected=subject.meta.technique.tag=='watercolor') Акварель
+				option(value='sculpture', selected=subject.meta.technique.tag=='sculpture') Скульптура
+				option(value='maket', selected=subject.meta.technique.tag=='maket') Макет
+				option(value='other', selected=subject.meta.technique.tag=='other') Другое
+			input(type='checkbox', name='technique[hidden]', value='true', checked=subject.meta.technique.hidden && true)
+			|скрыть категорию
+			br
+			input.ru(type="text", name="ru[technique][comment]", placeholder='Комментарий к технике', value=subject.meta.technique.i18n.comment.get('ru'))
+			input.en(type="text", name="en[technique][comment]", placeholder='Comment technique', disabled, value=subject.meta.technique.i18n.comment.get('en'))
+			.form_title Автор:
+			input.ru(type="text", name="ru[author]", value=subject.meta.i18n.author.get('ru'))
+			input.en(type="text", name="en[author]", disabled, value=subject.meta.i18n.author.get('en'))
+			.form_title Размер:
+			input.ru(type="text", name="ru[size]", value=subject.meta.i18n.size.get('ru'))
+			input.en(type="text", name="en[size]", disabled, value=subject.meta.i18n.size.get('en'))
+			.form_title Дата:
+			input.ru(type="text", name="ru[date]", value=subject.meta.i18n.date.get('ru'))
+			input.en(type="text", name="en[date]", disabled, value=subject.meta.i18n.date.get('en'))
+			.form_title Инвентарный номер:
+			input(type="text", name="inventory", value=subject.meta.inventory)
+			.form_title Интервал начало:
+			input(type="text", name="interval[start]", value=subject.meta.interval.start.getUTCFullYear())
+			.form_title Интервал конец:
+			input(type="text", name="interval[end]", value=subject.meta.interval.end.getUTCFullYear())
+			.form_title Изображение:
+			input(type="file", name="image")
+			br
+			br
+			input(type='submit', value='отправить')
+			button.toggle_eng(type='button') перевод

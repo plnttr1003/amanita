@@ -1,0 +1,508 @@
+body
+	overflow-y scroll!important
+
+.header_logo
+	background-position 0 0
+
+.object_images_block:after
+.object_subjects_block:after
+	content ''
+	top 0
+	left 0
+	width 100%
+	height 200px
+	display block
+	position absolute
+	background url('/images/design/gr.png') 0 100% repeat-x
+	background-size 1px 290px
+	opacity 0.7
+
+.header_block
+	position absolute
+	top 0
+	z-index 10000000
+	width 100%
+
+.header_block_inner
+	background transparent
+	color #fff
+	& a
+		color #fff
+
+.side_description
+	position absolute
+	top 70px
+	top 55px
+	bottom 0px
+	left 0
+	right 0
+	right 0px
+	color #fff
+	overflow hidden
+
+.side_description_inner
+	height 100%
+	width 100%
+	max-width 1280px
+	margin 0 auto
+	position relative
+
+.side_description_column
+	position absolute
+	top 0
+	right 0
+	width 360px
+	z-index 100000
+
+.side_description_cross
+	top 20px
+	right 20px
+	height 30px
+	width 30px
+	background: url("/images/design/cross.png") 0 0;
+	background-size: auto 30px;
+	position absolute
+	z-index 10000
+	cursor pointer
+	&:hover
+		background-position 30px 0
+
+.subject_inventory
+	border-bottom 1px solid
+
+.object_title
+	position relative
+	font-size 24px
+	color #fff
+	font-family ma_unitwlight
+	padding 20px 60px 0px 20px
+	background: rgba(0,0,0,0.66);
+	line-height 26px
+
+.object_navigate_block
+	z-index 9999
+	position relative
+	//overflow hidden
+
+.images_descriptons_block
+	background rgba(255, 255, 255, 0.85)
+	margin-top 10px
+	padding 10px 20px 10px
+	color #000
+	font-size: 18px;
+	line-height: 20px;
+
+.content_title_block
+	left 0
+	top 45px
+	position absolute
+	z-index 1000
+	width 100%
+	overflow visible
+
+.content_block
+	width 100%
+
+
+.object_navigate
+	font-size 18px
+	padding-top 5px
+	padding 5px 10px 0
+	color #fff
+	line-height 28px
+	background rgba(0, 0, 0, 0.66)
+	&:hover
+		color red
+		cursor pointer
+		cursor pointer
+		background #fff
+			& .item_inner
+				border-color transparent
+	&.current
+		color #ee3124
+		position relative
+		&:after
+			display block
+			content ''
+			position absolute
+			left -24px
+			top 7px
+			border 12px solid transparent
+			border-right 12px solid rgba(0, 0, 0, 0.66)
+			z-index 10000
+			width 0
+			height 0
+	& .item_inner
+		border-bottom 1px solid
+		margin 0 10px
+
+.object_description_block
+	width 100%
+	min-height 50px
+	z-index 9999
+	font-size 16px
+	background-color white
+	position absolute
+	display block
+
+.description_inner
+	width 1280px
+	padding-top 5px
+	padding-bottom 5px
+	position relative
+	overflow hidden
+	margin 0 auto
+
+.description_column
+	margin-right 20px
+	&:last-child
+		margin-right 0px
+
+.column_item_wrap
+	padding 10px 0
+	background: rgba(0,0,0,0.66);
+
+.column_item
+	margin 6px 20px
+	overflow hidden
+	&:last-child
+		margin-bottom 0px
+	a
+		color #fff
+		display inline-block
+		&:hover
+			color red
+		&:after
+			content ','
+			margin-right 5px
+		&:last-child:after
+				content ''
+				margin-right 0
+
+.column_title
+	float left
+	font-family 'ma_unitwlight'
+	margin-right 10px
+
+.object_images_block
+.object_3d_block
+	width 100%
+	top 0px
+	bottom 0
+	overflow hidden
+	position absolute
+	background-color #d5d5d5
+	background url('/images/design/bckg.jpg')
+	min-width 1000px
+
+.object_3d_block
+	display none
+	&.popup
+		position absolute
+		width 1100px
+		height 600px
+		z-index 9999
+		top 70px
+		left 50%
+		margin-left -550px
+		box-shadow 0 0 300px #000
+
+.object_image
+	display none
+	width 100%
+	height 100%
+	background-size contain
+	//background-size cover
+	background-repeat no-repeat
+	background-position center
+	background-attachment fixed
+	&:nth-child(1)
+		display block
+
+.images_navigate_block
+	position absolute
+	top 0
+	width 100%
+	height 100%
+
+.images_navigate_block_inner
+	width 100%
+	max-width 1280px
+	margin 0 auto
+	height 100%
+	position relative
+	&>div
+		position absolute
+		font-size 120px
+		color #fff
+		text-shadow 0 0 1px #000
+		user-select none
+		opacity 0
+		width 30%
+		height 100%
+		margin-top -60px
+		&:hover
+			opacity 0.9
+			cursor pointer
+		&.images_navigate_block_prev
+			left -4px
+		&.images_navigate_block_next
+			right 10px
+			text-align right
+			width 70%
+		& .images_arrow
+			top 50%
+			position absolute
+			width 100%
+
+.next_arrow
+	position absolute
+	right 370px
+
+.object_subjects_block
+	position absolute
+	width 100%
+	top 0
+	bottom 0
+	display none
+
+.object_slide_navigate
+	position absolute
+	width 100%
+	z-index 9999
+	display none
+	left 0
+
+.slide_navigate_inner
+	width 1280px
+	position relative
+	padding-top 10px
+	margin 0px auto
+
+.slides_inner_block
+	position absolute
+	top 10px
+	right 375px
+	padding 10px 10px 0px 0
+	background #000
+	background rgba(0, 0, 0, 0.78)
+	max-width 764px
+
+
+.object_slide_item
+	width 180px
+	height 150px
+	margin-left 11px
+	margin-bottom 10px
+	float right
+	background-size cover
+	background-position center
+	background-repeat no-repeat
+	cursor pointer
+
+.object_slide_title
+	top 100%
+	font-size 16px
+	position relative
+
+.slide_title_inner
+	bottom 0
+	position absolute
+	background-color white
+	font-size 13px
+	line-height 15px
+	padding 3px
+
+.goto_down
+	position absolute
+	bottom 0px
+	width 100%
+	height 42px
+
+.goto_down_inner
+	margin 0 auto
+
+.goto_down
+	a
+		width 140px
+		height 42px
+		margin 0 auto
+		display block
+		text-align center
+		background rgba(255, 255, 255, .75)
+		color #000
+		font 30px/44px 'menu_icons'
+		text-decoration none
+		cursor pointer
+		transform scale(1, -1)
+		&:hover
+			color #EE3124!important
+			background #fff
+		&.scrolled
+			transform scale(1, 1)
+
+.description_item
+	display none
+	&.images:first-child
+		display block
+
+.subject_description_title
+	float left
+
+.subject_description_item
+	padding-right 4px
+
+.subject_description_title
+	font-weight bold
+	padding-right 4px
+
+.description_item_block
+	overflow hidden
+
+.subject_title
+	font-size 21px
+	margin-bottom 15px
+	margin-top 7px
+
+.subject_author
+	font-size 21px
+	margin-top 10px
+
+.subject_description
+	margin-bottom 5px
+	margin-top 5px
+
+.subject_item_block
+	overflow hidden
+
+.footer_block
+	background rgba(0,0,0,0.6)
+	color white
+
+.sponsor_info
+	color white
+
+// ---
+
+.main_description_block
+	position absolute
+	top 100%
+	height auto
+	width 100%
+
+.main_description_inner, .main_attached_objects_inner
+	margin 0 auto 20px
+	width 1280px
+
+.main_description_column
+	padding 14px 0px 20px
+	user-select text
+	cursor text
+	width 850px
+	margin 0 auto
+
+.main_description_title
+	display block
+	text-decoration none
+	margin 20px 0 0
+	padding 10px 25px
+	border-bottom 1px solid #d7d7d7
+	font 45px/65px 'ma_unitwmedium'
+	text-align center
+
+.main_description_text
+	padding 14px 0px 20px
+
+.footer_block_inner
+	position relative
+
+.footer_sponsors_block
+	border none
+
+.main_attached_objects
+	position absolute
+	top 100%
+	width 100%
+	margin-bottom 90px
+
+.architect_block_title
+	font-family ma_unitwlight
+	font-size 18px
+	text-decoration none
+	&:hover
+		color #f00
+
+.main_attached_objects_block
+	margin 20px 25px 20px
+
+.architect_object
+	float left
+	width 230px
+	height 190px
+	display block
+	position relative
+	margin-right 20px
+	background-size cover
+	background-position 50%
+	background-repeat no-repeat
+	margin-bottom 20px
+
+.architect_object:nth-child(5n)
+	margin-right 0px
+
+.architect_object:hover
+	color #f00
+
+.architect_object_name
+	bottom 0
+	width 100%
+	background #fff
+	position absolute
+
+.footer_block
+	position absolute
+	background transparent
+	bottom -90px
+	font 14px/16px 'ma_unitwlight'
+	color #000
+	a
+		color #000
+
+.footer_sponsors_block
+	border-top 1px solid #d7d7d7
+	padding 10px 25px 10px
+
+
+
+.broken
+.missing
+.unsupported
+	overflow hidden
+
+.broken_background
+	height 600px
+	line-height 33px
+	text-align center
+	font-size 30px
+	padding 265px 50px 0
+	display block
+	&:hover
+		color #f00
+
+@media screen and (max-width:1280px) {
+	.description_inner, .image_description_inner, .images_navigate_block_inner, .slide_navigate_inner, .side_description_inner, .main_description_inner, .main_attached_objects_inner, .leaflet-control-container {
+		width: 1000px;
+	}
+	.architect_object, .architect_object:nth-child(5n) {
+		margin-right: 10px;
+	}
+	.architect_object:nth-child(4n) {
+		margin-right: 0px;
+	}
+	.description_column {
+		width: 220px;
+	}
+	.object_image {
+		background-attachment: scroll;
+	}
+}
