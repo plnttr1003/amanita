@@ -4,15 +4,12 @@ $(document).ready(function() {
 	var oldLayer;
 
 
-	$('.object_navigate.subjects').on('click', function(event) {
-		$('.object_navigate').removeClass('current');
-		$(this).addClass('current');
-		$('.subjects_slide').show();
-		$('.column_item').hide();
+// клик по кнопке коллекции музея
+
 
 		subjectsGroup = L.layerGroup();
 
-		$('.object_slide_item.subjects').each(function() {
+		$('.object_image').each(function() {
 			var path = $(this).attr('path');
 
 			var layer = L.tileLayer('/images/subjects/' + path + '/tiles/{z}/image_tile_{y}_{x}.jpg', {
@@ -28,13 +25,65 @@ $(document).ready(function() {
 			layer._leaflet_id = path;
 			subjectsGroup.addLayer(layer);
 		});
+
+
+// переключение слайдов
+
+
+	$('.images_navigate_block_next').on('click', function(event) {
+		var index = $(this).parents('.object_image').index();
+		var length = $('.object_image').length - 1;
+
+		if (index != length) {
+			$(this).parents('.object_image').hide().next().show()
+			$('.description_item.images').eq(index).hide().next().show();
+		}
+		else {
+			$('.object_image').hide().eq(0).show();
+			$('.description_item.images').hide().eq(0).show();
+		}
 	});
 
 
+	$('.images_navigate_block_prev').on('click', function(event) {
+		var index = $(this).parents('.object_image').index();
 
-	$('.object_slide_item.subjects').on('click', function(event) {
+		if (index !== 0) {
+			$(this).parents('.object_image').hide().prev().show();
+			$('.description_item.images').eq(index).hide().prev().show();
+		}
+		else {
+			$('.object_image').hide().last().show();
+			$('.description_item.images').hide().last().show();
+		}
+	});
+
+
+// клик по крестику изображения
+
+	$('.cross').on('click', function(event) {
+		var index = $(this).index();
+		$(this).hide();
+		$('.object_images_block').show();
+		$('.object_subjects_block').hide();
+		$('.images_slide').hide();
+		$('.object_navigate').removeClass('current');
+		$('.object_image').hide().eq(index).show();
+		$('.description_item.subjects').hide();
+		$('.description_item.images').hide().eq(index).show();
+		$('.goto_down').show();
+		$('body').css({'height':'auto','overflow':'auto'});
+		$('.main_description_block').show();
+	});
+
+
+// клик по превьюшке единицы хранения
+
+	$('.object_image').on('click', function(event) {
+		$('.cross').show();
 		$('body').css({'height':'100%','overflow':'hidden'});
 		$('.object_subjects_block').show();
+		$('.object_images_block').hide();
 		$('.object_navigate').removeClass('current');
 		$('.description_item.images').hide();
 

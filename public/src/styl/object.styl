@@ -13,7 +13,6 @@ body
 	height 200px
 	display block
 	position absolute
-	background url('/images/design/gr.png') 0 100% repeat-x
 	background-size 1px 290px
 	opacity 0.7
 
@@ -185,7 +184,6 @@ body
 	margin-right 10px
 
 .object_images_block
-.object_3d_block
 	width 100%
 	top 0px
 	bottom 0
@@ -195,17 +193,6 @@ body
 	background url('/images/design/bckg.jpg')
 	min-width 1000px
 
-.object_3d_block
-	display none
-	&.popup
-		position absolute
-		width 1100px
-		height 600px
-		z-index 9999
-		top 70px
-		left 50%
-		margin-left -550px
-		box-shadow 0 0 300px #000
 
 .object_image
 	display none
@@ -270,23 +257,7 @@ body
 	position absolute
 	width 100%
 	z-index 9999
-	display none
 	left 0
-
-.slide_navigate_inner
-	width 1280px
-	position relative
-	padding-top 10px
-	margin 0px auto
-
-.slides_inner_block
-	position absolute
-	top 10px
-	right 375px
-	padding 10px 10px 0px 0
-	background #000
-	background rgba(0, 0, 0, 0.78)
-	max-width 764px
 
 
 .object_slide_item
@@ -488,6 +459,21 @@ body
 	display block
 	&:hover
 		color #f00
+
+
+.cross
+	display none
+	outline 20px solid #fc0
+	width 60px
+	height 60px
+	background #fc0
+	cursor pointer
+	position absolute
+	top 0
+	left 0
+	z-index 1000000000
+	&:hover
+		background #f00
 
 @media screen and (max-width:1280px) {
 	.description_inner, .image_description_inner, .images_navigate_block_inner, .slide_navigate_inner, .side_description_inner, .main_description_inner, .main_attached_objects_inner, .leaflet-control-container {

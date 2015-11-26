@@ -123,7 +123,7 @@ exports.add_form = function(req, res) {
 	mkdirp.sync(public_folder + subject_folder);
 
 	gm(files.image.path).write(public_folder + subject_folder + '/original.jpg', function() {
-		gm(files.image.path).resize(350, false).write(public_folder + subject_folder + '/thumb.jpg', function() {
+		gm(files.image.path).resize(1200, false).write(public_folder + subject_folder + '/thumb.jpg', function() {
 			subject.image.original = subject_folder + '/original.jpg';
 			subject.image.thumb = subject_folder + '/thumb.jpg';
 
@@ -208,7 +208,7 @@ exports.edit_form = function(req, res) {
     mkdirp.sync(public_folder + subject_folder);
 
 		gm(files.image.path).write(public_folder + subject_folder + '/original.jpg', function() {
-			gm(files.image.path).resize(350, false).write(public_folder + subject_folder + '/thumb.jpg', function() {
+			gm(files.image.path).resize(1200, false).write(public_folder + subject_folder + '/thumb.jpg', function() {
 				subject.image.original = subject_folder + '/original.jpg';
 				subject.image.thumb = subject_folder + '/thumb.jpg';
 
