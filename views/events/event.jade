@@ -16,6 +16,33 @@ block content_scripts
 
 
 block content
+
+
+	.screen_block.info_block
+		.info_block_inner
+			.content_navigate_block
+
+		.goto_down
+			a.goto_down_inner.info
+
+	.screen_block.about_block
+		.about_block_inner
+			.about_block_image
+				img(src='/images/design/contacts/amanita.png')
+			.about_text_inner
+					include ../static/content/contacts/en.html
+		.goto_down
+			a.goto_down_inner.about
+
+	.screen_block.contacts_block
+		.about_block_inner
+			.about_text_inner
+				iframe(src='/auth/feedback/add', width=880, height=760, frameborder=0, allowtransparency=1, scrolling=0)
+		.goto_down
+			a.goto_down_inner.about
+
+
+
 	- var views = {plan: 'План', front: 'Фасад', perspective: 'Аксонометрия', general_view: 'Общий вид', master_plan: 'Генеральный план',  panorama: 'Панорама', main_front: 'Главный фасад', short_form: 'Малая форма', sculpture: 'Скульптура', interior: 'Интерьер', part: 'Деталь', other: 'Другое'}
 	- var technique = {engraving: 'Гравюра', lithography: 'Литография', photo: 'Фотография', drawing: 'Чертеж', painting: 'Живопись', picture: 'Рисунок', sculpture: 'Скульптура', maket: 'Макет', other: 'Другое'}
 
