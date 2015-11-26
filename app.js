@@ -13,18 +13,13 @@ var express = require('express'),
 var nodemailer = require("nodemailer"); // ___!!!___nodemailer___!!!___
 
 
-
-var transporter = nodemailer.createTransport()
-transporter.sendMail({
-    //from: 'sender@address',
-    //to: 'receiver@address',
-    //subject: 'hello',
-    //text: 'hello world!'
+var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'info@amanita.gallery',
+        pass: 'amanitaArtist1000'
+    }
 });
-
-
-
-
 
 
 
@@ -352,27 +347,30 @@ app.route('/registr')
 
 
 
-app.get('/',function(req,res){res.sendfile('index.html');});
+//app.get('/',function(req,res){res.sendfile('index.html');});
 app.get('/send',function(req,res){
 	var mailOptions = {
-	to : req.query.to,
+	to : '' + req.query.to +', info@amanita.gallery',
 	from: 'info@amanita.gallery',
 	subject : req.query.subject,
 	text : req.query.text
 	}
 console.log(mailOptions);
 transporter.sendMail(mailOptions, function(error, info){
-    if(error){
-        return console.log(error);
-    }
-    console.log('Message sent: ' + info.response);
+	if(error) {
+		console.log(error);
+		res.end("error");
+	} else{
+		console.log("Message sent: " + info.message);
+		res.end("sent");
+	}
 });
 })
 
 
 
 // === Contacts Route
-app.route('/contacts').get(content.contacts);
+//- app.route('/contacts').get(content.contacts);
 
 
 

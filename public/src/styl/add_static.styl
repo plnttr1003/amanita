@@ -33,7 +33,12 @@ p
 	.social_block a
 		margin 5px 0
 form
+#container
+	width 56%
+	float right
 	input
+	textarea
+	button
 		width 470px!important
 		border 1px solid rgba(221, 221, 221, 0.4);
 		margin 0px auto 20px
@@ -42,6 +47,7 @@ form
 		font 12pt/14pt 'code_pro_lightregular'
 		color #fff
 		padding 5px
+		box-sizing initial
 		&:focus
 			border-color #f00
 			outline none
@@ -50,6 +56,11 @@ form
 			margin-top 30px
 			font-size 14pt
 			height 50px
+	button
+		height 50px
+		font-size 14pt
+	textarea
+		height 155px
 
 	.wysiwyg-container.editor
 		width 470px!important
@@ -66,7 +77,6 @@ form
 	.wysiwyg-toolbar-icon
 		color #fff
 
-
 input
 	height 40px
 
@@ -80,3 +90,7 @@ input
 
 .form_block
 	padding-bottom 0
+
+#message
+	font-size 14pt
+	line-height 15pt

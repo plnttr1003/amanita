@@ -5,17 +5,12 @@ block title
 	title Оставить запись
 
 block content_style
-	link(rel='stylesheet', type='text/css', href='/build/libs/css/font-awesome.css')
-	link(rel='stylesheet', type='text/css', href='/build/libs/css/wysiwyg-editor.css')
 	link(rel='stylesheet', type='text/css', href='/build/css/add.css')
 	link(rel='stylesheet', type='text/css', href='/build/css/add_static.css')
 
 block content_scripts
-	script(type='text/javascript', src='/build/libs/js/wysiwyg.js')
-	script(type='text/javascript', src='/build/libs/js/wysiwyg-editor.js')
 	script(type='text/javascript', src='/build/js/contacts.js' + version)
 	//-script(type='text/javascript', src='/build/js/upload.js')
-	script(type='text/javascript', src='/build/js/add.js')
 
 block content
 	- var year = new Date()
@@ -25,7 +20,7 @@ block content
 		.form_info
 			p.name A M A N I T A
 			p.email
-				a(href="amanitaartist@gmail.com") amanitaartist@gmail.com
+				a(href="info@amanita.gallery") info@amanita.gallery
 			.social_block
 				a.fb(href='https://www.facebook.com/amanita.erashov') 
 					span /amanita.erashov
@@ -33,20 +28,14 @@ block content
 					span @amanita.erashov
 
 
-		form(action="", method="post")
-			.form_title= __('Your name...')
-			+form_text_single('title')
-			.form_title= __('E-mail...')
-			+form_text_single('s_title')
-			.form_title= __('Message...')
-			+form_text_multi('description')
-			input(type='submit', value='send message')
 
+	#container
+		.form_title= __('Email...')
+		input#to(type='text')
+		.form_title= __('Subject...')
+		input#subject(type='text')
+		.form_title= __('Message...')
+		textarea#content(cols='40', rows='5')
 
-	//-#container
-		input#to(type='text', placeholder='Enter E-mail ID where you want tosend')
-		input#subject(type='text', placeholder='Write Subject')
-		textarea#content(cols='40', rows='5', placeholder='Write what you want to send')
-
-		button#send_email= 'Send Email'
+		button#send_email= __('Send Email')
 		span#message

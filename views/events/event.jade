@@ -110,6 +110,7 @@ block content
 			each subject, i in event.subjects
 				.object_image(style='background-image:url(' + subject.image.thumb + ')')
 					.images_navigate_block
+						.images_description: != subject.i18n.description.get(locale)
 						.images_navigate_block_inner
 							.images_zoom(path=subject._id)
 							.images_navigate_block_prev
