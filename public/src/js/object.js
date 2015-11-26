@@ -2,6 +2,7 @@ $(document).ready(function() {
 	var subjectsGroup;
 	var map;
 	var oldLayer;
+	var index = 0;
 
 // клик по кнопке коллекции музея
 
@@ -29,7 +30,7 @@ $(document).ready(function() {
 
 
 	$('.images_navigate_block_next').on('click', function(event) {
-		var index = $(this).parents('.object_image').index();
+		index = $(this).parents('.object_image').index();
 		var length = $('.object_image').length - 1;
 
 		if (index != length) {
@@ -44,7 +45,7 @@ $(document).ready(function() {
 
 
 	$('.images_navigate_block_prev').on('click', function(event) {
-		var index = $(this).parents('.object_image').index();
+		index = $(this).parents('.object_image').index();
 
 		if (index !== 0) {
 			$(this).parents('.object_image').hide().prev().show();
@@ -60,16 +61,12 @@ $(document).ready(function() {
 // клик по крестику изображения
 
 	$('.cross').on('click', function(event) {
-		var index = $(this).index();
 		$(this).hide();
 		$('.object_images_block, .header_block, .content_title').show();
 		$('.object_subjects_block').hide();
 		$('.images_slide').hide();
 		$('.object_navigate').removeClass('current');
-		$('.object_image').hide().eq(index).show();
 		$('.description_item.subjects').hide();
-		$('.description_item.images').hide().eq(index).show();
-		$('.goto_down').show();
 		$('body').css({'height':'auto','overflow':'auto'});
 		$('.main_description_block').show();
 	});
