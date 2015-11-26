@@ -7,8 +7,12 @@ $(document).ready(function(){
 				$("#message").text("Sending E-mail...Please wait");
 				$.get("/send",{to:to, subject:subject, text:text},function(data){
 				if(data == "sent")
-					{
+					{	$('#to, #subject, #content').val('');
 						$("#message").empty().html("Email is been sent at "+to+" . Please check inbox !");
+						var st = function st() {
+							$("#message").empty();
+						}
+						setTimeout(st,800);
 					}
 			});
 		});
