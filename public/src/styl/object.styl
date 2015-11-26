@@ -184,8 +184,8 @@ body
 
 .object_images_block
 	width 100%
-	top 0px
-	bottom 0
+	top 11vmax
+	bottom 3vmax
 	overflow hidden
 	position absolute
 	background-color #d5d5d5
@@ -201,7 +201,6 @@ body
 	//background-size cover
 	background-repeat no-repeat
 	background-position center
-	background-attachment fixed
 	&:nth-child(1)
 		display block
 
@@ -214,8 +213,8 @@ body
 
 .images_navigate_block_inner
 	position absolute
-	top 11vmax
-	bottom 3vmax
+	top 0
+	bottom 0
 	left 0
 	right 0
 	overflow hidden
@@ -229,14 +228,26 @@ body
 		&.images_zoom
 			left 50%
 			top 50%
-			width 200px
-			height 200px
-			margin-left -100px
-			margin-top -100px
-			background #fc0
+			width 12vmax
+			height 12vmax
+			margin-left -6vmax
+			margin-top -6vmax
 			opacity 0
 			&:hover
 				opacity 1
+			&:after
+				content '+'
+				width 4vmax
+				height 4vmax
+				border-radius 50%
+				border 1px solid #000
+				line-height 4.3vmax
+				font-size 5vmax
+				transform none
+				text-align center
+				left 50%
+				margin-left -2vmax
+				margin-top -2vmax
 		&:after
 			display block
 			content ''
@@ -250,7 +261,7 @@ body
 			z-index 100
 			transition-timing-function linear
 			transition-duration .3s
-			transition-property border-color
+			transition-property border-color, color
 		&.images_navigate_block_prev
 			right 0
 			&:after
@@ -266,6 +277,7 @@ body
 		&:hover
 			&:after
 				border-color #f00
+				color #f00
 
 
 

@@ -275,15 +275,14 @@
 
 
 .leaflet-control-container {
-  /*width: 1280px;*/
-  max-width: 1280px;
+	width: 100%;
 	margin: 0 auto;
   height: 20px;
   position: relative;
 }
 .leaflet-top.leaflet-left {
   top: 105px;
-  right: -103px;
+  right: 37px;
 }
 .leaflet-top.leaflet-left a {
   font-size: 42px !important;
