@@ -14,8 +14,6 @@ var userSchema = new Schema({
 
 
 
-
-
 var hallSchema = new Schema({
 	title: { type: String, trim: true, locale: true },
 	s_title: { type: String, trim: true, locale: true },
@@ -70,8 +68,6 @@ var eventSchema = new Schema({
 	}],
 	date: {type: Date, default: Date.now}
 });
-
-
 
 
 var subjectSchema = new Schema({

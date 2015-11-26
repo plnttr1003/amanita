@@ -3,13 +3,11 @@ $(document).ready(function() {
 	var map;
 	var oldLayer;
 
-
 // клик по кнопке коллекции музея
-
 
 		subjectsGroup = L.layerGroup();
 
-		$('.object_image').each(function() {
+		$('.images_zoom').each(function() {
 			var path = $(this).attr('path');
 
 			var layer = L.tileLayer('/images/subjects/' + path + '/tiles/{z}/image_tile_{y}_{x}.jpg', {
@@ -64,7 +62,7 @@ $(document).ready(function() {
 	$('.cross').on('click', function(event) {
 		var index = $(this).index();
 		$(this).hide();
-		$('.object_images_block').show();
+		$('.object_images_block, .header_block, .content_title').show();
 		$('.object_subjects_block').hide();
 		$('.images_slide').hide();
 		$('.object_navigate').removeClass('current');
@@ -79,14 +77,14 @@ $(document).ready(function() {
 
 // клик по превьюшке единицы хранения
 
-	$('.object_image').on('click', function(event) {
+	$('.images_zoom').on('click', function(event) {
+
 		$('.cross').show();
 		$('body').css({'height':'100%','overflow':'hidden'});
 		$('.object_subjects_block').show();
-		$('.object_images_block').hide();
+		$('.object_images_block, .header_block, .content_title').hide();
 		$('.object_navigate').removeClass('current');
 		$('.description_item.images').hide();
-
 
 		var index = $(this).index();
 		$('.description_item.subjects').hide().eq(index).show();
@@ -103,9 +101,5 @@ $(document).ready(function() {
 			map.removeLayer(oldLayer).setView([0, 0], 3).addLayer(currentLayer);
 			oldLayer = currentLayer;
 		}
-
 	});
-
-
-
 });

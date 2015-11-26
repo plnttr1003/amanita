@@ -20,7 +20,6 @@ body
 	position absolute
 	top 0
 	z-index 10000000
-	width 100%
 
 .header_block_inner
 	background transparent
@@ -212,39 +211,70 @@ body
 	width 100%
 	height 100%
 
+
 .images_navigate_block_inner
-	width 100%
-	max-width 1280px
-	margin 0 auto
-	height 100%
-	position relative
+	position absolute
+	top 11vmax
+	bottom 3vmax
+	left 0
+	right 0
+	overflow hidden
 	&>div
 		position absolute
-		font-size 120px
-		color #fff
-		text-shadow 0 0 1px #000
-		user-select none
-		opacity 0
-		width 30%
+		top 0
+		width 10vmax
 		height 100%
-		margin-top -60px
-		&:hover
-			opacity 0.9
-			cursor pointer
-		&.images_navigate_block_prev
-			left -4px
-		&.images_navigate_block_next
-			right 10px
-			text-align right
-			width 70%
-		& .images_arrow
+		z-index 100
+		cursor pointer
+		&.images_zoom
+			left 50%
 			top 50%
+			width 200px
+			height 200px
+			margin-left -100px
+			margin-top -100px
+			background #fc0
+			opacity 0
+			&:hover
+				opacity 1
+		&:after
+			display block
+			content ''
 			position absolute
-			width 100%
+			top 50%
+			height 2vmax
+			width 2vmax
+			margin-top -1vmax
+			transform rotate(45deg)
+			transform-origin 50%
+			z-index 100
+			transition-timing-function linear
+			transition-duration .3s
+			transition-property border-color
+		&.images_navigate_block_prev
+			right 0
+			&:after
+				right 2vmax
+				border-right 1px solid #000
+				border-top 1px solid #000
+		&.images_navigate_block_next
+			left 0
+			&:after
+				left 2vmax
+				border-left 1px solid #000
+				border-bottom 1px solid #000
+		&:hover
+			&:after
+				border-color #f00
+
+
+
+
+
 
 .next_arrow
 	position absolute
-	right 370px
+	right 0px
 
 .object_subjects_block
 	position absolute
@@ -463,17 +493,27 @@ body
 
 .cross
 	display none
-	outline 20px solid #fc0
+	color #000
 	width 60px
 	height 60px
-	background #fc0
 	cursor pointer
 	position absolute
 	top 0
 	left 0
 	z-index 1000000000
+	&:after
+		position fixed
+		content ''
+		top 40px
+		right 40px
+		background-color #fc0
+		width 30px
+		height 30px
+		background url("/images/design/cross-black.png") 0 0 no-repeat
+		background-size 60px
 	&:hover
-		background #f00
+		&:after
+			opacity 0.8
 
 @media screen and (max-width:1280px) {
 	.description_inner, .image_description_inner, .images_navigate_block_inner, .slide_navigate_inner, .side_description_inner, .main_description_inner, .main_attached_objects_inner, .leaflet-control-container {

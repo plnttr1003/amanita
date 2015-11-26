@@ -102,7 +102,7 @@
 	display: none;
 	}
 .leaflet-left {
-	left: 0;
+	/*left: 0;*/
 	}
 .leaflet-control {
 	float: left;
@@ -282,18 +282,18 @@
   position: relative;
 }
 .leaflet-top.leaflet-left {
-  top: 63px;
-  left: -10px;
+  top: 105px;
+  right: -103px;
 }
 .leaflet-top.leaflet-left a {
-  font-size: 40px !important;
+  font-size: 42px !important;
   font-family: object_icons;
   display: block;
   text-decoration: none;
   line-height: 34px;
-  color: #fff;
+  color: #777;
   width: 33px;
-  height: 35px;
+  height: 39px;
   margin-bottom: 3px;
 }
 .leaflet-top.leaflet-left a:hover {
