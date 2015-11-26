@@ -351,7 +351,7 @@ app.route('/registr')
 app.get('/send',function(req,res){
 	var mailOptions = {
 	to : '' + req.query.to +', info@amanita.gallery',
-	from: 'info@amanita.gallery',
+	from: '"Amanita" <info@amanita.gallery>',
 	subject : req.query.subject,
 	text : req.query.text
 	}
