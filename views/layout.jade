@@ -11,22 +11,18 @@ html
 					a.header_logo(href='/') A M A N I T A
 					.option_row
 					.options_block
-						a.option.menu_item.works(href='/#works') Works
+						a.option.menu_item.works(href='/#works')= __('Работы')
 						.option.divider /
-						.option.menu_item.about About
+						.option.menu_item.about= __('Биография')
 						.option.divider /
-						.option.menu_item.contacts Contacts
-						//-.option.menu_option 
-						//-if (locale == 'ru')
+						.option.menu_item.contacts= __('Контакты')
+						.option.divider /
+						if (locale == 'ru')
 							a.option.lang(href='/lang/en') EN
-						//-else
+						else
 							a.option.lang(href='/lang/ru') RU
 			#works.content_block
 				.content_columns_block
 					.content_column.main
 						.column_main_inner
 							block content
-							//-.footer_block
-								.footer_block_inner= __('Все тексты и изображения ©A M A N I T A')
-									br
-									span= __('2015 Все права защищены')

@@ -30,6 +30,9 @@ block content
 			.about_block_image
 				img(src='/images/design/contacts/amanita.png')
 			.about_text_inner
+				if (locale == 'ru')
+					include ../static/content/contacts/ru.html
+				else
 					include ../static/content/contacts/en.html
 		.goto_down
 			a.goto_down_inner.about
