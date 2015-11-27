@@ -92,11 +92,11 @@ $(document).ready(function() {
 		var currentLayer = subjectsGroup.getLayer(path);
 
 		if (map === undefined) {
-			map = L.map('subjects_view').setView([60, -20], 3).addLayer(currentLayer);
+			map = L.map('subjects_view').setView([70, -70], 3).addLayer(currentLayer);
 			oldLayer = currentLayer;
 		}
 		else {
-			map.removeLayer(oldLayer).setView([60, -20], 3).addLayer(currentLayer);
+			map.removeLayer(oldLayer).setView([70, -70], 3).addLayer(currentLayer);
 			oldLayer = currentLayer;
 		}
 	});
