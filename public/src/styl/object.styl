@@ -171,6 +171,20 @@
 	top 11vmax
 	bottom 5.5vmax
 	position absolute
+	.item_descr
+		background #fff
+		padding 2vmax
+		top 1.1vmax
+		bottom 0
+		position absolute
+		left 10vmax
+		right 10vmax
+		overflow hidden
+		@media screen and (max-aspect-ratio: 2/2)
+			padding 2vmin
+			top 1.1vmin
+			left 10vmin
+			right 10vmin
 	.images_description
 		position absolute
 		bottom -1.9vmax
@@ -246,13 +260,13 @@
 			transition-timing-function linear
 			transition-duration .3s
 			transition-property border-color, color
-		&.images_navigate_block_prev
+		&.images_navigate_block_next
 			right 0
 			&:after
 				right 2vmax
 				border-right 1px solid #000
 				border-top 1px solid #000
-		&.images_navigate_block_next
+		&.images_navigate_block_prev
 			left 0
 			&:after
 				left 2vmax
@@ -262,15 +276,6 @@
 			&:after
 				border-color #f00
 				color #f00
-
-
-
-
-
-
-.next_arrow
-	position absolute
-	right 0px
 
 .object_subjects_block
 	position absolute
