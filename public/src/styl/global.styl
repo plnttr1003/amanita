@@ -15,7 +15,7 @@ h3
 body
 	margin 0
 	padding 0
-	font 1.2vmax/1.4vmax 'code_pro_lightregular', 'Arimo'
+	font 1.2vw/1.4vw 'code_pro_lightregular', 'Arimo'
 	font-weight 400
 	overflow hidden
 	background #f8f8f8
@@ -80,15 +80,14 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		color rgb(196, 20, 59)
 
 .header_inner
-	width 87vmax
-	margin 1.5vmax auto
+	width 100%
+	margin 1.5vw auto
 	overflow hidden
 	@media screen and (max-aspect-ratio: 2/2)
-		width 87vmin
-		margin 1.5vmin auto
+		margin 1.5vh auto
 	.header_logo
-		font-size 2.4vmax
-		line-height 2.7vmax
+		font-size 2.4vw
+		line-height 2.7vw
 		color #000
 		text-decoration none
 		text-align center
@@ -100,29 +99,40 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		&:hover
 			color #f00
 		@media screen and (max-aspect-ratio: 2/2)
-			font-size 4vmin
-			line-height 4.2vmin
+			font-size 4vh
+			line-height 4.2vh
 
-.social_block
-	a
-		color white
-		font 25px/25px 'Icons'
-		text-decoration none
-		display block
-		span
-			font 14pt 'code_pro_lightregular', 'Arimo'
-		&:hover
-			color #f00
-		&.fb
-			margin-right 0
-		&.inst
-			display inline-block
-		&.vk
-			display inline-block
-			margin-right 0
+.social_block a {
+		color: #fff;
+		font: 25px/25px 'Icons';
+		text-decoration: none;
+		display: block;
+}
+
+.social_block a span {
+		font: 14pt 'code_pro_lightregular','Arimo'
+}
+
+.social_block a:hover {
+		color: #f00
+}
+
+.social_block a.fb {
+		margin-right: 0
+}
+
+.social_block a.inst {
+		display: inline-block
+}
+
+.social_block a.vk {
+		display: inline-block;
+		margin-right: 0
+}
+
 
 .options_block
-	margin-top 1vmax
+	margin-top 1vw
 	text-align center
 	font-weight bold
 	.option
@@ -132,8 +142,8 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		color #000
 		text-decoration none
 		@media screen and (max-aspect-ratio: 2/2)
-			font-size 2vmin
-			line-height 2vmin
+			font-size 2vh
+			line-height 2vh
 		&:hover
 			color #f00
 		&.lang
@@ -160,38 +170,38 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	&.main
 		overflow hidden
 		.content_title
-			margin-bottom 2vmax
-			font-size 2.4vmax
-			line-height 2.7vmax
+			margin-bottom 2vw
+			font-size 2.4vw
+			line-height 2.7vw
 			font-weight bold
-			letter-spacing 0.34vmax
+			letter-spacing 0.34vw
 			text-align center
 			position fixed
-			top 7.7vmax
+			top 7.7vw
 			left 30px
 			right 30px
 			background #f8f8f8
 			z-index 100
 			@media screen and (max-aspect-ratio: 2/2)
-				top 11vmin
-				margin-bottom 2vmin
-				font-size 4vmin
-				line-height 4.2vmin
-				letter-spacing 0.34vmin
+				top 11vh
+				margin-bottom 2vh
+				font-size 4vh
+				line-height 4.2vh
+				letter-spacing 0.34vh
 		.column_main_inner
 			overflow-y hidden
 			overflow-x hidden
 			height 100%
 		.content_outer_block
 			margin 0 auto
-			width 90vmax
+			width 90vw
 			@media screen and (max-aspect-ratio: 2/2)
-				width 90vmin
+				/*width 90vh*/
 			.content_outer_block_inner
-				margin-top 6vmax
+				margin-top 6vw
 				position relative
 				@media screen and (max-aspect-ratio: 2/2)
-					margin-top 6vmin
+					margin-top 6vh
 .content_navigate_block
 	overflow hidden
 	.navigate_title

@@ -1,9 +1,9 @@
 .content_column.main
 	.content_outer_block
 		.content_outer_block_inner
-			margin-top 11vmax
+			margin-top 11vw
 			@media screen and (max-aspect-ratio: 2/2)
-				margin-top 11vmin
+				margin-top 11vh
 
 
 
@@ -27,15 +27,15 @@
 		overflow hidden
 		z-index 200
 		background #f8f8f8
-		top 8vmax
+		top 8vw
 		bottom 0
 		height auto
 		@media screen and (max-aspect-ratio: 2/2)
-			top 8vmin
+			top 10vh
 		.content_slider
-			width 90vmax
+			width 90vw
 			@media screen and (max-aspect-ratio: 2/2)
-				width 90vmin
+				/*width 90vh*/
 			height 100%
 			margin 0 auto
 			position relative
@@ -45,13 +45,13 @@
 				top 0
 				left 0
 				right 0
-				bottom 4vmax
+				bottom 4vw
 				color #000
 				transition-timing-function linear
 				transition-duration .4s
 				transition-property color
 				@media screen and (max-aspect-ratio: 2/2)
-					bottom 4vmin
+					bottom 5vh
 				background-size contain
 				background-repeat no-repeat
 				background-position 50%
@@ -60,9 +60,10 @@
 					width 100%
 					text-align center
 					top 100%
-					margin-top 0.5vmax
+					margin-top 0.5vw
 					@media screen and (max-aspect-ratio: 2/2)
-						margin-top 1.4vmin
+						margin-top 0vh
+						font-size 2vh
 				&:hover
 					color #f00
 
@@ -76,7 +77,8 @@
 		z-index 200
 		.about_block_inner
 			overflow-y visible
-			width 700px
+			width 80vw
+			max-width 700px
 			margin 63px auto 0
 			.about_block_image
 				background #fff
@@ -113,8 +115,11 @@
 		z-index 200
 		.about_block_inner
 			overflow-y visible
-			width 880px
+			width 80vw
 			margin 63px auto 0
+			iframe
+				@media screen and (max-aspect-ratio: 2/2)
+					width 80vw
 			.about_block_image
 				img
 					margin 0 auto

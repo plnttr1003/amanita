@@ -167,13 +167,13 @@
 
 .content_scroll_items
 	margin 0 auto
-	max-width 90vmax
+	max-width 90vw
 	display none
 
 .item_fancy
 	display block
 	width 29%
-	height 31vmax
+	height 31vw
 	overflow hidden
 	margin-left 2%
 	margin-right 2%
@@ -210,8 +210,8 @@
 .content_slider_items
 .content_arrow_items
 	position absolute
-	top 11vmax
-	bottom 3vmax
+	top 11vw
+	bottom 3vw
 	left 0
 	right 0
 	overflow hidden
@@ -219,7 +219,7 @@
 	.left
 		position absolute
 		top 0
-		width 10vmax
+		width 10vw
 		height 100%
 		z-index 100
 		cursor pointer
@@ -228,9 +228,9 @@
 			content ''
 			position absolute
 			top 50%
-			height 2vmax
-			width 2vmax
-			margin-top -1vmax
+			height 2vw
+			width 2vw
+			margin-top -1vw
 			transform rotate(45deg)
 			transform-origin 50%
 			z-index 100
@@ -240,21 +240,21 @@
 		&.right
 			right 0
 			&:after
-				right 2vmax
+				right 2vw
 				border-right 1px solid #000
 				border-top 1px solid #000
 		&.left
 			left 0
 			&:after
-				left 2vmax
+				left 2vw
 				border-left 1px solid #000
 				border-bottom 1px solid #000
 		&:hover
 			&:after
 				border-color #f00
 	@media screen and (max-aspect-ratio: 2/2)
-		top 11vmin
-		bottom 3vmin
+		top 11vh
+		bottom 3vh
 	.item_slider
 		height 100%
 		left 0
@@ -269,17 +269,17 @@
 		transition-timing-function ease-in-out
 		&.item_descr
 			background #fff
-			padding 2vmax
-			top 1.1vmax
+			padding 2vw
+			top 1.1vw
 			bottom 0
 			position absolute
-			left 10vmax
-			right 10vmax
+			left 10vw
+			right 10vw
 			@media screen and (max-aspect-ratio: 2/2)
-				padding 2vmin
-				top 1.1vmin
-				left 10vmin
-				right 10vmin
+				padding 2vh
+				top 1.1vh
+				left 10vh
+				right 10vh
 		&:nth-child(1)
 			opacity 1
 			z-index 10
@@ -289,10 +289,10 @@
 			background-position 50%
 			background-repeat no-repeat
 			height 90%
-			width 90vmax
+			width 90vw
 			margin 0 auto
 			@media screen and (max-aspect-ratio: 2/2)
-				width 90vmin
+				width 90vh
 		.item_description
 			position absolute
 			top 92%
