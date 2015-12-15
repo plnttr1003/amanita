@@ -15,8 +15,12 @@ h3
 body
 	margin 0
 	padding 0
-	font 1.2vw/1.4vw 'code_pro_lightregular', 'Arimo'
-	font-weight 400
+	font 1.2vw/1.4vw 'kamerik_thin', 'code_pro_lightregular', Arial, sans
+	/*font-family 'kamerik_thin'
+	font-family 'kamerik_bold'
+	font-family 'kamerik_book'
+	font-family 'kamerik_light'*/
+	font-weight 200
 	overflow hidden
 	background #f8f8f8
 
@@ -51,7 +55,7 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	outline none
 	padding-bottom 5px
 	border-bottom 1px solid white
-	font-family 'code_pro_lightregular'
+	font-family 'kamerik_light'
 
 .search_result
 	width 100%
@@ -75,7 +79,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	display block
 	text-decoration none
 	margin-top 10px
-	font 14pt/16pt 'Roboto'
 	&:hover
 		color rgb(196, 20, 59)
 
@@ -92,10 +95,10 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		text-decoration none
 		text-align center
 		display block
-		font-weight bold
 		transition-timing-function linear
 		transition-duration 0.6s
 		transition-property background,color
+		font-family 'code_pro_lightregular'
 		&:hover
 			color #f00
 		@media screen and (max-aspect-ratio: 2/2)
@@ -110,7 +113,7 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 }
 
 .social_block a span {
-		font: 14pt 'code_pro_lightregular','Arimo'
+		font: 14pt 'code_pro_lightregular'
 }
 
 .social_block a:hover {
@@ -141,6 +144,7 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		display inline-block
 		color #000
 		text-decoration none
+		font-family 'code_pro_lightregular'
 		@media screen and (max-aspect-ratio: 2/2)
 			font-size 2vh
 			line-height 2vh
@@ -173,15 +177,16 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			margin-bottom 2vw
 			font-size 2.4vw
 			line-height 2.7vw
-			font-weight bold
 			letter-spacing 0.34vw
 			text-align center
 			position fixed
+			text-transform uppercase
 			top 7.7vw
 			left 30px
 			right 30px
 			background #f8f8f8
 			z-index 100
+			font-family 'code_pro_lightregular'
 			@media screen and (max-aspect-ratio: 2/2)
 				top 11vh
 				margin-bottom 2vh
