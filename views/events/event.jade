@@ -53,10 +53,6 @@ block content
 
 	- function get_locale(option, lang) {var locale = option.filter(function(locale) { return locale.lg == lang })[0]; if (locale) {return locale.value } else {return ''} }
 	.cross
-	.content_title
-		.content_title_inner= event.i18n.title.get(locale)
-
-
 
 	.object_graphics_block
 		.object_images_block
@@ -66,7 +62,10 @@ block content
 				if (i === 0)
 					.object_image(style='background-image:url(' + subject.image.thumb + ')')
 						.images_navigate_block
-							.images_description: != subject.i18n.description.get(locale)
+							.images_description
+								span.series_name= event.i18n.title.get(locale)
+								span= ' / '
+								span.work_name: != subject.i18n.description.get(locale)
 							.images_navigate_block_inner
 								.images_zoom(path=subject._id)
 								.images_navigate_block_prev
@@ -84,7 +83,10 @@ block content
 				else
 					.object_image(style='background-image:url(' + subject.image.thumb + ')')
 						.images_navigate_block
-							.images_description: != subject.i18n.description.get(locale)
+							.images_description
+								span.series_name= event.i18n.title.get(locale)
+								span= ' / '
+								span.work_name: != subject.i18n.description.get(locale)
 							.images_navigate_block_inner
 								.images_zoom(path=subject._id)
 								.images_navigate_block_prev
