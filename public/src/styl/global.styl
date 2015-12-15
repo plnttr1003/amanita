@@ -23,6 +23,9 @@ body
 	font-weight 200
 	overflow hidden
 	background #f8f8f8
+	@media screen and (max-width: 1280px)
+		font-size 17px
+		line-height 17px
 
 html, body, .main_block, .content_block, .content_columns_block, .content_column, .column_inner_block
 	height 100%
@@ -103,11 +106,16 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		transition-property background,color
 		font-family 'code_pro_lightregular'
 		font-weight bold
+		@media screen and (max-width: 1280px)
+			font-size 17px
+			line-height 17px
 		&:hover
 			color #f00
 		@media screen and (max-aspect-ratio: 2/2)
 			font-size 4vh
 			line-height 4.2vh
+			float none
+			text-align center
 
 .social_block a {
 		color: #fff;
@@ -141,6 +149,8 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 .options_block
 	text-align center
 	float right
+	@media screen and (max-aspect-ratio: 2/2)
+		float none
 	.option
 		margin-right 10px
 		cursor pointer
