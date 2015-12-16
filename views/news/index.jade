@@ -1,0 +1,30 @@
+extends ../layout
+
+block title
+	title= __('ПРЕССА')
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/build/css/blocks_grid.css' + version)
+	link(rel='stylesheet', type='text/css', href='/build/css/main.css' + version)
+	link(rel='stylesheet', type='text/css', href='/build/css/news.css' + version)
+
+
+mixin trimString(str, length)
+	if (str.length > length)
+		span.body: != str.substr(0, length)
+		span.etc ...
+		span.hide= str.substr(length, str.length)
+	- else
+		span.body: != str
+
+
+block content
+	.content_outer_block
+		.content_outer_block_inner
+			each item in news
+				a.content_item.news(href= item.i18n.link.get(locale), target='_blank')
+					.item_description
+						.item_date= item.date.getDate() + ' ' + months[item.date.getMonth()] + ' ' + item.date.getFullYear()
+						.item_title.item_publ= item.i18n.title.get(locale)
+						.item_title.item_name= item.i18n.additional_title.get(locale)
+						.item_body: +trimString(item.i18n.description.get(locale).replace(/(<([^>]+)>)/ig, ''), 100)
