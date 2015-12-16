@@ -74,7 +74,7 @@ app.use(function(req, res, next) {
 var main = require('./routes/main.js');
 var events = require('./routes/events.js');
 var subjects = require('./routes/subjects.js');
-
+var news = require('./routes/news.js');
 //var halls = require('./routes/admin/halls.js');
 
 var exposure = require('./routes/exposure.js');
@@ -89,7 +89,7 @@ var admin_users = require('./routes/admin/users.js');
 var admin_halls = require('./routes/admin/halls.js');
 var admin_subsidiarys = require('./routes/admin/subsidiarys.js');
 var admin_events = require('./routes/admin/events.js');
-
+var admin_news = require('./routes/admin/news.js');
 var admin_subjects = require('./routes/admin/subjects.js');
 
 var admin_categorys = require('./routes/admin/categorys.js');
@@ -141,6 +141,16 @@ app.route('/subjects/:id').get(subjects.subject);
 	app.route('/albums/:id').get(events.event);
 
 
+
+// === News Route
+app.route('/news')
+	.get(news.index)
+	.post(news.get_news);
+
+// === News Route
+app.route('/news/:id').get(news.news);
+
+
 // ------------------------
 // *** Admin Users Routes Block ***
 // ------------------------
@@ -167,6 +177,28 @@ app.route('/auth/users/edit/:id')
 app.route('/auth/users/remove')
 	 .post(checkAuth, admin_users.remove);
 
+
+
+
+// === Admin news Route
+app.route('/auth/news').get(checkAuth, admin_news.list);
+
+
+// === Admin @add news Route
+app.route('/auth/news/add')
+	 .get(checkAuth, admin_news.add)
+	 .post(checkAuth, admin_news.add_form);
+
+
+// === Admin @edit news Route
+app.route('/auth/news/edit/:id')
+	 .get(checkAuth, admin_news.edit)
+	 .post(checkAuth, admin_news.edit_form);
+
+
+// === Admin @remove news Route
+app.route('/auth/news/remove')
+	 .post(checkAuth, admin_news.remove);
 
 
 

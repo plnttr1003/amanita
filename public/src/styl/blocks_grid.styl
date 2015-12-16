@@ -13,6 +13,34 @@
 	margin-right 2%
 	background-repeat no-repeat
 	cursor pointer
+	&.news
+		width 100%!important
+		height auto
+		color #fff
+		&:hover
+			background transparent!important
+			color #dadada
+			transition-timing-function linear
+			transition-duration .3s
+			.item_title
+			.item_date
+				color #ca0000
+				transition-timing-function3 linear
+				transition-duration .3s
+		.item_description
+			.item_title
+			.item_date
+				font-size inherit
+				display inline!important
+				&:after
+					content '|'
+					display inline-block
+					padding 0 10px
+			.item_title
+				font-family 'kamerik_bold'
+				&.item_name
+					&:after
+						content ''
 	@media screen and (max-aspect-ratio: 2/2)
 		width 46%
 	.item_image

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	var menu_var = 1;
 	var search = {
 		val: '', buf: '',
 		checkResult: function() {
@@ -59,6 +60,44 @@ $(document).ready(function() {
 	$('.block').css('color', '#B8B8B8').on('click', function(event) {
 		event.preventDefault();
 	});
+
+
+
+
+	$('.menu_press').on('click', function(event) {
+		if (menu_var === 1) {
+			$('.column_main_inner').append('<div class="screen_block press_block"><div class="press_block_inner"></div></div>');
+			menu_var = 0;
+			$('.press_block_inner').load('../news .content_outer_block_inner')
+			$('.screen_block.press_block').append('<div class="goto_down"><a class="goto_down_inner press"></a></div>');
+			window.location.hash = '#press';
+
+			$('a.goto_down_inner.press').click(function(event) {
+					$('.screen_block.press_block').remove();
+					menu_var = 1;
+					window.location.hash = '';
+			})
+		}
+		else if (menu_var === 0) {
+			$('.screen_block.press_block').remove();
+			menu_var = 1;
+			window.location.hash = '';
+		}
+	});
+
+	$(window).on('hashchange', function(event) {
+		//console.log(window.location.hash);
+		hash = window.location.hash;
+		console.log(hash);
+		if(hash !== '#press' || !hash) {
+			//console.log('1');
+			$('.screen_block.press_block').remove();
+		}
+	});
+
+
+
+
 
 	$(document).on('mouseup', function(event) {
 		var container = $('.search_block');

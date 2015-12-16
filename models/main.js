@@ -12,7 +12,19 @@ var userSchema = new Schema({
 	date: {type: Date, default: Date.now},
 });
 
-
+var newsSchema = new Schema({
+	title: { type: String, trim: true, locale: true },
+	additional_title: { type: String, trim: true, locale: true },
+	link: { type: String, trim: true, locale: true },
+	description: { type: String, trim: true, locale: true },
+	date: {type: Date, default: Date.now},
+	status: String,
+	images: [{
+		description: { type: String, trim: true, locale: true },
+		original: String,
+		thumb: String
+	}]
+});
 
 var hallSchema = new Schema({
 	title: { type: String, trim: true, locale: true },
@@ -125,7 +137,7 @@ var categorySchema = new Schema({
 
 userSchema.plugin(mongooseBcrypt, { fields: ['password'] });
 
-
+newsSchema.plugin(mongooseLocale);
 hallSchema.plugin(mongooseLocale);
 subsidiarySchema.plugin(mongooseLocale);
 eventSchema.plugin(mongooseLocale);
@@ -153,6 +165,7 @@ subjectSchema.set('autoIndex', true);
 
 
 module.exports.User = mongoose.model('User', userSchema);
+module.exports.News = mongoose.model('News', newsSchema);
 module.exports.Hall = mongoose.model('Hall', hallSchema);
 module.exports.Subsidiary = mongoose.model('Subsidiary', subsidiarySchema);
 module.exports.Event = mongoose.model('Event', eventSchema);

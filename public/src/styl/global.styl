@@ -145,6 +145,22 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		margin-right: 0
 }
 
+.screen_block
+	height 100%
+	&.press_block
+		position absolute
+		overflow-y auto
+		width 100%
+		background rgba(0,0,0,0.85)
+		color #fff
+		z-index 200
+		top 0
+		bottom 0
+		.press_block_inner
+			overflow-y visible
+			width 80vw
+			max-width 700px
+			margin 63px auto 0
 
 .options_block
 	text-align center
@@ -286,3 +302,30 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	.footer_block_inner
 		width 540px
 		margin 12px auto 10px
+
+.goto_down a
+	position fixed
+	bottom 0
+	color #fff
+	text-align center
+	width 100%
+	font-size 30px
+	line-height 60px
+	top 0
+	left 0
+	right 0
+	z-index -1
+	cursor pointer
+	&:after
+		position fixed
+		content ''
+		top 40px
+		right 40px
+		background-color #fc0
+		width 30px
+		height 30px
+		background url("/images/design/cross.png") 0 0 no-repeat
+		background-size 60px
+	&:hover
+		&:after
+			opacity 0.8
