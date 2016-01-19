@@ -15,11 +15,7 @@ h3
 body
 	margin 0
 	padding 0
-	font 1.2vw/1.4vw 'kamerik_light', 'code_pro_lightregular', Arial, sans
-	/*font-family 'kamerik_thin'
-	font-family 'kamerik_bold'
-	font-family 'kamerik_book'
-	font-family 'kamerik_light'*/
+	font 15px/22px 'helvetica', Arial, sans
 	font-weight 200
 	overflow hidden
 	background #f8f8f8
@@ -30,16 +26,30 @@ body
 html, body, .main_block, .content_block, .content_columns_block, .content_column, .column_inner_block
 	height 100%
 
+.main_block
+	width 1200px
+	margin 0 auto
+
 .header_block
-	position absolute
 	background #f8f8f8
 	color #000
 	z-index 10
-	left 30px
-	right 30px
 	&.black_header
 		background transparent
 		color #fff
+
+.header_block
+.content_block
+	float left
+	display block
+
+.header_block
+	//-margin 0 30px
+	width 200px
+
+.content_block
+	width 1000px
+	position relative
 
 .search_block
 	width 100%
@@ -87,25 +97,23 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 
 .header_inner
 	position relative
-	max-width 1310px
-	margin 1vw auto 0
+	margin-top 30px
 	overflow hidden
 	//-outline 1px solid #fc0
 	@media screen and (max-aspect-ratio: 2/2)
 		margin 1.5vh auto
 	.header_logo
-		font-size 1.4vw
-		line-height 1.4vw
+		font-size 25px
+		line-height 25px
 		color #000
 		text-decoration none
 		text-align left
-		float left
 		display block
 		transition-timing-function linear
 		transition-duration 0.6s
 		transition-property background,color
-		font-family 'code_pro_lightregular'
-		font-weight bold
+		font-family 'helvetica'
+		//-margin-top 90px
 		@media screen and (max-width: 1280px)
 			font-size 17px
 			line-height 17px
@@ -125,7 +133,7 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 }
 
 .social_block a span {
-		font: 14pt 'code_pro_lightregular'
+		font: 14pt 'helvetica'
 }
 
 .social_block a:hover {
@@ -163,17 +171,19 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			margin 63px auto 0
 
 .options_block
-	text-align center
-	float right
-	@media screen and (max-aspect-ratio: 2/2)
-		float none
+	margin-top 10px
+	width 100px
+	//-text-align center
+	//-float right
+	//-@media screen and (max-aspect-ratio: 2/2)
+		//-float none
 	.option
 		margin-right 10px
 		cursor pointer
-		display inline-block
+		//-display inline-block
 		color #000
 		text-decoration none
-		font-family 'kamerik_light', 'code_pro_lightregular'
+		font-family 'helvetica'
 		&[href='#']
 			cursor default
 			color #8c8c8c
@@ -188,6 +198,8 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			color #000
 			text-decoration none
 			text-transform lowercase
+			border-top 1px solid #000
+			display block
 			&:hover
 				color #f00
 		&.search
@@ -221,7 +233,7 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			right 30px
 			background #f8f8f8
 			z-index 100
-			font-family 'code_pro_lightregular'
+			font-family 'helvetica'
 			@media screen and (max-aspect-ratio: 2/2)
 				top 11vh
 				margin-bottom 2vh
@@ -283,7 +295,7 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 				&:after
 					content '✕'
 .footer_block
-	font 10pt/12pt 'code_pro_lightregular'
+	font 10pt/12pt 'helvetica'
 	padding-bottom 4px
 	text-align center
 	position fixed
