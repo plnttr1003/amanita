@@ -405,10 +405,8 @@ transporter.sendMail(mailOptions, function(error, info){
 //- app.route('/contacts').get(content.contacts);
 
 
-
-
-
 app.route('/google851b5b52d0dc7a3e.html').get(content.htm);
+app.route('/about').get(content.about);
 
 
 // ------------------------

@@ -1,3 +1,6 @@
+*
+	outline none
+
 h1, h2, h3, h4, h5
 	font-weight normal
 	line-height 1em
@@ -27,29 +30,39 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	height 100%
 
 .main_block
-	width 1200px
+	min-width 1200px
+	width 90vw
 	margin 0 auto
 
 .header_block
 	background #f8f8f8
 	color #000
 	z-index 10
+	//-box-shadow 10px 0px 80px 40px #eee
 	&.black_header
 		background transparent
 		color #fff
 
 .header_block
 .content_block
-	float left
+	//-float left
 	display block
 
 .header_block
-	//-margin 0 30px
-	width 200px
+	width 230px
+	position absolute
+	top 0
+	left 0
+	bottom 0
 
 .content_block
-	width 1000px
-	position relative
+	position absolute
+	top 0
+	left 230px
+	right 0
+	bottom 0
+	background #ccc
+	background #fff
 
 .search_block
 	width 100%
@@ -68,7 +81,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	outline none
 	padding-bottom 5px
 	border-bottom 1px solid white
-	font-family 'kamerik_light'
 
 .search_result
 	width 100%
@@ -99,6 +111,8 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	position relative
 	margin-top 30px
 	overflow hidden
+	margin-left 30px
+	margin-right 30px
 	//-outline 1px solid #fc0
 	@media screen and (max-aspect-ratio: 2/2)
 		margin 1.5vh auto
@@ -113,7 +127,15 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		transition-duration 0.6s
 		transition-property background,color
 		font-family 'helvetica'
-		//-margin-top 90px
+		&:before
+			display block
+			content ''
+			width 180px
+			height 180px
+			background url(/images/design/contacts/amanita.png) 50% no-repeat
+			background-size 130px
+			filter grayscale(0.4)
+			opacity 0.7
 		@media screen and (max-width: 1280px)
 			font-size 17px
 			line-height 17px
@@ -125,33 +147,17 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			float none
 			text-align center
 
-.social_block a {
-		color: #fff;
-		font: 25px/25px 'Icons';
-		text-decoration: none;
-		display: block;
-}
-
-.social_block a span {
-		font: 14pt 'helvetica'
-}
-
-.social_block a:hover {
-		color: #f00
-}
-
-.social_block a.fb {
-		margin-right: 0
-}
-
-.social_block a.inst {
-		display: inline-block
-}
-
-.social_block a.vk {
-		display: inline-block;
-		margin-right: 0
-}
+.social_block
+	border-top 1px solid #000
+	margin-right 10px
+	margin-top 10px
+	padding-top 10px
+	a
+		color #000
+		font 25px/25px 'Icons'
+		text-decoration none
+		&:hover
+			color #f00
 
 .screen_block
 	height 100%
@@ -173,17 +179,13 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 .options_block
 	margin-top 10px
 	width 100px
-	//-text-align center
-	//-float right
-	//-@media screen and (max-aspect-ratio: 2/2)
-		//-float none
 	.option
 		margin-right 10px
 		cursor pointer
-		//-display inline-block
 		color #000
 		text-decoration none
 		font-family 'helvetica'
+		display block
 		&[href='#']
 			cursor default
 			color #8c8c8c
@@ -194,12 +196,15 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 			line-height 2vh
 		&:hover
 			color #f00
-		&.lang
+		&.option_contacts
 			color #000
 			text-decoration none
 			text-transform lowercase
 			border-top 1px solid #000
+			margin-top 10px
+			padding-top 10px
 			display block
+			text-decoration underline
 			&:hover
 				color #f00
 		&.search
@@ -215,6 +220,7 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 .content_columns_block
 	overflow hidden
 	margin 0 auto
+	background url(/images/design/gr.png) 0 0 repeat-y
 
 .content_column
 	box-sizing border-box
@@ -247,13 +253,9 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 		.content_outer_block
 			margin 0 auto
 			width 90vw
-			@media screen and (max-aspect-ratio: 2/2)
-				/*width 90vh*/
 			.content_outer_block_inner
 				margin-top 6vw
 				position relative
-				@media screen and (max-aspect-ratio: 2/2)
-					margin-top 6vh
 .content_navigate_block
 	overflow hidden
 	.navigate_title
@@ -303,14 +305,6 @@ html, body, .main_block, .content_block, .content_columns_block, .content_column
 	left 0
 	right 0
 	background #fff
-	.social_block
-		float none
-		display block
-		text-align center
-		a
-			float none
-			display inline-block
-			color #000
 	.footer_block_inner
 		width 540px
 		margin 12px auto 10px

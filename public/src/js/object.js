@@ -63,7 +63,7 @@ $(document).ready(function() {
 
 	$('.cross').on('click', function(event) {
 		$(this).hide();
-		$('.object_images_block, .header_block, .content_title').show();
+		$('.object_images_block, .content_title').show();
 		$('.object_subjects_block').hide();
 		$('.images_slide').hide();
 		$('.object_navigate').removeClass('current');
@@ -80,7 +80,7 @@ $(document).ready(function() {
 		$('.cross').show();
 		$('body').css({'height':'100%','overflow':'hidden'});
 		$('.object_subjects_block').show();
-		$('.object_images_block, .header_block, .content_title').hide();
+		$('.object_images_block, .content_title').hide();
 		$('.object_navigate').removeClass('current');
 		$('.description_item.images').hide();
 

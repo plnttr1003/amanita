@@ -12,14 +12,28 @@ html
 					.option_row
 					.options_block
 						a.option.menu_item.works(href='/#works')= __('Работы')
-						.option.menu_item.about= __('Биография')
-						.option.menu_item.contacts= __('Контакты')
-						.option.menu_press.menu_item= __('Пресса')
+						a.option.menu_item(href='/about')= __('Биография')
+						//-.option.menu_item.about= __('Биография')
+						//-.option.menu_item.contacts= __('Контакты')
+						a.option.menu_item(href='/news')= __('Пресса')
+						//-.option.menu_press.menu_item= __('Пресса')
 						.option.menu_item(href='#')= __('Выставки')
+
+						.social_block
+							a.fb(href='https://www.facebook.com/amanita.erashov') 
+							a.inst(href='https://instagram.com/amanitaartist/')  
+
+						a.option.option_contacts(href="mailto:info@amanita.gallery") info@amanita.gallery
+
+
 						if (locale == 'ru')
 							a.option.lang(href='/lang/en') EN
 						else
 							a.option.lang(href='/lang/ru') RU
+
+
+
+
 			#works.content_block
 				.content_columns_block
 					.content_column.main

@@ -1,4 +1,4 @@
-exports.team = function(req, res) {
+/*exports.team = function(req, res) {
   res.render('static/team.jade');
 }
 
@@ -21,7 +21,11 @@ exports.schedule = function(req, res) {
 exports.contacts = function(req, res) {
   res.render('static/contacts');
 }
-
+*/
 exports.htm = function(req, res) {
   res.render('static/htm');
+}
+
+exports.about = function(req, res) {
+  res.render('static/about.jade');
 }
