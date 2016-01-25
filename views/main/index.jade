@@ -29,24 +29,6 @@ block content
 							.content_image_description_text= event.i18n.title.get(locale)
 
 
-	.screen_block.about_block
-		.about_block_inner
-			.about_block_image
-				img(src='/images/design/contacts/amanita.png')
-			.about_text_inner
-				if (locale == 'ru')
-					include ../static/content/contacts/ru.html
-				else
-					include ../static/content/contacts/en.html
-		.goto_down
-			a.goto_down_inner.about
-
-	.screen_block.contacts_block
-		.about_block_inner
-			.about_text_inner
-				iframe(src='/auth/feedback/add', width=880, height=760, frameborder=0, allowtransparency=1, scrolling=0)
-		.goto_down
-			a.goto_down_inner.about
 
 	.content_outer_block
 		.content_outer_block_inner
