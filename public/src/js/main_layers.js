@@ -55,5 +55,14 @@ function intro_runction() {
 			$('.header_block').removeClass('black_header');
 		});
 
+$(".content_slider > a:gt(0)").hide();
+	setInterval(function() {
+		$('.content_slider > a:first')
+			.fadeOut(3000)
+			.next()
+			.fadeIn(3000)
+			.end()
+			.appendTo('.content_slider');
+	},  6000);
 
 })
