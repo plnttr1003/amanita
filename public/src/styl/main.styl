@@ -5,6 +5,8 @@
 			@media screen and (max-aspect-ratio: 2/2)
 				margin-top 4vh
 
+
+
 :target
 	.screen_block
 		&.info_block
@@ -24,13 +26,14 @@
 		position absolute
 		overflow hidden
 		z-index 200
-		top 0
+		background #f8f8f8
+		top 3.3vw
 		bottom 0
 		height auto
 		@media screen and (max-aspect-ratio: 2/2)
 			top 10vh
 		.content_slider
-			width 100%
+			width 90vw
 			@media screen and (max-aspect-ratio: 2/2)
 				/*width 90vh*/
 			height 100%
@@ -39,20 +42,19 @@
 			.content_scroll_item
 				position absolute
 				display block
-				top 1vw
-				left 4vw
-				right 4vw
+				top 0
+				left 0
+				right 0
 				bottom 4vw
 				color #000
 				transition-timing-function linear
 				transition-duration .4s
 				transition-property color
+				@media screen and (max-aspect-ratio: 2/2)
+					bottom 5vh
 				background-size contain
 				background-repeat no-repeat
 				background-position 50%
-				display none
-					&:first-child
-						display block
 				.content_image_description
 					position absolute
 					width 100%
@@ -89,9 +91,12 @@
 					width 260px
 					height 260px
 		.about_text_inner
+			font 14pt/17pt 'kamerik_light'
 			padding-bottom 50px
 			p
 				text-align justify
+			b
+				font-family 'kamerik_bold'
 		.form_block
 			width 600px;
 			border 1px solid
@@ -100,6 +105,7 @@
 			margin-bottom 20px
 			background rgba(208, 208, 208, 0.2)
 			display block
+			font 12pt/14pt 'kamerik_light'
 			color #fff
 			padding 5px
 	&.contacts_block
@@ -124,6 +130,7 @@
 					width 240px
 					margin-bottom 55px
 		.about_text_inner
+			font 17pt/20pt 'kamerik_light'
 			p
 				text-align center
 				margin 0 0 10px
@@ -139,6 +146,7 @@
 			margin-bottom 20px
 			background rgba(208, 208, 208, 0.2)
 			display block
+			font 12pt/14pt 'kamerik_light'
 			color #fff
 			padding 5px
 			&:focus
