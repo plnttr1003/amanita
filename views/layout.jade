@@ -11,26 +11,27 @@ html
 					a.header_logo(href='/') A M A N I T A
 					.option_row
 					.options_block
+
 						a.option.menu_item.works(href='/#works')= __('Работы')
+						.option.divider /
 						a.option.menu_item(href='/about')= __('Биография')
-						//-.option.menu_item.about= __('Биография')
-						//-.option.menu_item.contacts= __('Контакты')
+						.option.divider /
 						a.option.menu_item(href='/news')= __('Пресса')
-						//-.option.menu_press.menu_item= __('Пресса')
+						.option.divider /
 						.option.menu_item(href='#')= __('Выставки')
-
-						.social_block
-							a.fb(href='https://www.facebook.com/amanita.erashov') 
-							a.inst(href='https://instagram.com/amanitaartist/')  
-
-						a.option.option_contacts(href="mailto:info@amanita.gallery") info@amanita.gallery
-
+						.option.divider /
 						if (locale == 'ru')
 							a.option.lang(href='/lang/en') EN
 						else
 							a.option.lang(href='/lang/ru') RU
 
-					a.banner_block(href='http://www.worksonpaperfair.com/')
+						a.social.fb(href='https://www.facebook.com/amanita.erashov') 
+						a.social.inst(href='https://instagram.com/amanitaartist/')  
+
+				a.option.option_contacts(href="mailto:info@amanita.gallery") info@amanita.gallery
+
+
+				a.banner_block(href='http://www.worksonpaperfair.com/')
 						img(src='/images/design/wop.jpg')
 
 
